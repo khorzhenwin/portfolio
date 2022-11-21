@@ -1,5 +1,6 @@
 import Header from "../components/header";
 import Hero from "../components/hero";
+import AboutMe from "../components/aboutMe";
 import Footer from "../components/footer";
 import Head from "next/head";
 
@@ -15,6 +16,7 @@ export default function Home() {
       </Head>
       <Header />
       <Hero />
+      <AboutMe />
       <Footer />
     </>
   );

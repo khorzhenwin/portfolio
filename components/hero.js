@@ -6,7 +6,7 @@ import {
   Text,
   Button,
   Icon,
-  IconProps,
+  Link,
 } from "@chakra-ui/react";
 
 export default function Hero() {
@@ -23,15 +23,20 @@ export default function Hero() {
           fontSize={{ base: "3xl", sm: "4xl", md: "6xl" }}
           lineHeight={"110%"}
         >
-          Time for a{" "}
+          Time for an{" "}
           <Text as={"span"} color={"orange.400"}>
-            New Project!
+            Introduction!
           </Text>
         </Heading>
         <Text color={"gray.500"} maxW={"3xl"}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel in quos
-          unde minus omnis vitae optio accusamus debitis ea soluta quaerat dicta
-          nam laudantium dolorem dignissimos adipisci, voluptatibus deleniti ad.
+          My friends asked my why I didn't have my own portfolio website,
+          knowing that i full well had the capabilities to do so. So here I am
+          making a somewhat presentable one made purely from templates that i
+          pulled off from{" "}
+          <Link href="https://chakra-templates.dev" isExternal>
+            Chakra Templates.{" "}
+          </Link>
+          This site was made using Next.js and Chakra UI.
         </Text>
         <Stack spacing={6} direction={"row"}>
           <Button
@@ -40,6 +45,7 @@ export default function Hero() {
             colorScheme={"orange"}
             bg={"orange.400"}
             _hover={{ bg: "orange.500" }}
+            href=""
           >
             About Me
           </Button>
