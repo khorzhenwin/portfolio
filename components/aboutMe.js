@@ -90,53 +90,59 @@ function TestimonialCard(props) {
 
 export default function GridBlurredBackdrop() {
   return (
-    <Flex
-      textAlign={"center"}
-      justifyContent={"center"}
-      direction={"column"}
-      width={"full"}
-    >
-      <Box width={{ base: "full", sm: "lg", lg: "xl" }} margin={"auto"}>
-        <chakra.h3
-          fontWeight={"bold"}
-          fontSize={20}
-          textTransform={"uppercase"}
-          color={"orange.400"}
-        >
-          Get to know me
-        </chakra.h3>
-        <chakra.h1
-          py={5}
-          fontSize={48}
-          fontWeight={"bold"}
-          color={useColorModeValue("gray.700", "gray.50")}
-        >
-          Who am I, What do I do?
-        </chakra.h1>
-        <chakra.h2
-          margin={"auto"}
-          width={"70%"}
-          fontWeight={"medium"}
-          color={useColorModeValue("gray.500", "gray.400")}
-        >
-          A final year student @ APU Malaysia studying Computer Science (Data
-          Analytics) with experience in{" "}
-          <chakra.strong color={useColorModeValue("gray.700", "gray.50")}>
-            Data Engineering, Backend Development, and Software Test Engineering
-          </chakra.strong>{" "}
-        </chakra.h2>
-      </Box>
-      <SimpleGrid
-        columns={{ base: 1, xl: 1 }}
-        spacing={"20"}
-        my={16}
-        mx={"auto"}
+    <>
+      <Flex
+        textAlign={"center"}
+        justifyContent={"center"}
+        direction={"column"}
+        width={"full"}
       >
-        {testimonials.map((cardInfo, index) => (
-          <TestimonialCard {...cardInfo} index={index} />
-        ))}
-      </SimpleGrid>
-      {/* <Box>
+        <Box
+          width={{ base: "full", sm: "lg", lg: "xl" }}
+          margin={"auto"}
+          id="aboutMe"
+        >
+          <chakra.h3
+            fontWeight={"bold"}
+            fontSize={20}
+            textTransform={"uppercase"}
+            color={"orange.400"}
+          >
+            Get to know me
+          </chakra.h3>
+          <chakra.h1
+            py={5}
+            fontSize={48}
+            fontWeight={"bold"}
+            color={useColorModeValue("gray.700", "gray.50")}
+          >
+            Who am I, What do I do?
+          </chakra.h1>
+          <chakra.h2
+            margin={"auto"}
+            width={"70%"}
+            fontWeight={"medium"}
+            color={useColorModeValue("gray.500", "gray.400")}
+          >
+            A final year student @ APU Malaysia studying Computer Science (Data
+            Analytics) with experience in{" "}
+            <chakra.strong color={useColorModeValue("gray.700", "gray.50")}>
+              Data Engineering, Backend Development, and Software Test
+              Engineering
+            </chakra.strong>{" "}
+          </chakra.h2>
+        </Box>
+        <SimpleGrid
+          columns={{ base: 1, xl: 1 }}
+          spacing={"20"}
+          my={16}
+          mx={"auto"}
+        >
+          {testimonials.map((cardInfo, index) => (
+            <TestimonialCard {...cardInfo} index={index} key={index} />
+          ))}
+        </SimpleGrid>
+        {/* <Box>
         <Icon viewBox="0 0 40 35" mt={14} boxSize={10} color={"purple.400"}>
           <path
             fill={"currentColor"}
@@ -144,6 +150,7 @@ export default function GridBlurredBackdrop() {
           />
         </Icon>
       </Box> */}
-    </Flex>
+      </Flex>
+    </>
   );
 }

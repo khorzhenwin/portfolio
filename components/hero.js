@@ -7,6 +7,7 @@ import {
   Button,
   Icon,
   Link,
+  LinkOverlay,
 } from "@chakra-ui/react";
 
 export default function Hero() {
@@ -45,10 +46,10 @@ export default function Hero() {
             colorScheme={"orange"}
             bg={"orange.400"}
             _hover={{ bg: "orange.500" }}
-            href=""
           >
-            About Me
+            <LinkOverlay href="/#aboutMe">About Me</LinkOverlay>
           </Button>
+
           <Button rounded={"full"} px={6}>
             Achievements
           </Button>

@@ -2,6 +2,7 @@ import Header from "../components/header";
 import Hero from "../components/hero";
 import AboutMe from "../components/aboutMe";
 import Footer from "../components/footer";
+import ScrollToTop from "../components/scrollToTop";
 import Head from "next/head";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
       <Hero />
       <AboutMe />
       <Footer />
+      <ScrollToTop />
     </>
   );
 }
