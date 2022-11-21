@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { HiArrowUp } from "react-icons/hi";
-import { Box, Button } from "@chakra-ui/react";
+import { IconButton } from "@chakra-ui/react";
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,21 +29,17 @@ export default function ScrollToTop() {
   return (
     <>
       {isVisible && (
-        <Box
+        <IconButton
+          size={"sm"}
+          icon={<HiArrowUp />}
+          colorScheme={"orange"}
+          bg={"orange.400"}
+          variant="solid"
           onClick={scrollToTop}
           position="fixed"
           bottom="20px"
           right={["16px", "30px"]}
-          zIndex={3}
-        >
-          <Button
-            size={"sm"}
-            rightIcon={<HiArrowUp />}
-            colorScheme={"orange"}
-            bg={"orange.400"}
-            variant="solid"
-          ></Button>
-        </Box>
+        />
       )}
     </>
   );
