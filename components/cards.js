@@ -68,7 +68,8 @@ const TestimonialAvatar = ({ src, name, title }) => {
 export default function WithSpeechBubbles() {
   return (
     <Box
-    // bg={useColorModeValue("gray.100", "gray.700")}
+      id="experience"
+      // bg={useColorModeValue("gray.100", "gray.700")}
     >
       <Container maxW={"7xl"} py={16} as={Stack} spacing={12} mb={10}>
         <VStack spacing={0} alignItems={"center"}>
@@ -79,7 +80,7 @@ export default function WithSpeechBubbles() {
             textTransform={"uppercase"}
             color={"orange.400"}
           >
-            My Expertise
+            My Experience
           </chakra.h3>
           <Heading align={"center"}>What roles am I familiar with?</Heading>
           <Text align={"center"}>
@@ -93,28 +94,30 @@ export default function WithSpeechBubbles() {
         >
           <Testimonial>
             <TestimonialContent>
-              <TestimonialHeading>Efficient Collaborating</TestimonialHeading>
+              <TestimonialHeading>Data Engineering</TestimonialHeading>
               <TestimonialText>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
-                neque sed imperdiet nibh lectus feugiat nunc sem.
+                ETL process using Python and BigQuery with Apache Airflow to
+                maintain continuous and scalable data pipelines to produce clean
+                and presentable data.
               </TestimonialText>
             </TestimonialContent>
           </Testimonial>
           <Testimonial>
             <TestimonialContent>
-              <TestimonialHeading>Intuitive Design</TestimonialHeading>
+              <TestimonialHeading>Backend Development</TestimonialHeading>
               <TestimonialText>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
-                neque sed imperdiet nibh lectus feugiat nunc sem.
+                Constructed & maintained microservices using Node.js, Express, &
+                MongoDB. Schema structured using Swagger and API tested using
+                Jest automated testing.
               </TestimonialText>
             </TestimonialContent>
           </Testimonial>
           <Testimonial>
             <TestimonialContent>
-              <TestimonialHeading>Mindblowing Service</TestimonialHeading>
+              <TestimonialHeading>Quality Assurance</TestimonialHeading>
               <TestimonialText>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
-                neque sed imperdiet nibh lectus feugiat nunc sem.
+                Conducted Manual testing of web and native mobile applications.
+                Explored front-end automated testing using Robot & Selenium.
               </TestimonialText>
             </TestimonialContent>
           </Testimonial>

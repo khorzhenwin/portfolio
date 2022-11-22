@@ -2,7 +2,7 @@ import Header from "../components/header";
 import Hero from "../components/hero";
 import AboutMe from "../components/aboutMe";
 import Achievements from "../components/carrousel";
-import Expertise from "../components/cards";
+import Experience from "../components/cards";
 import Footer from "../components/footer";
 import ScrollToTop from "../components/scrollToTop";
 import Head from "next/head";
@@ -11,17 +11,17 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>React Project 1.0.0</title>
+        <title>Khor Zhen Win</title>
         <link
           rel="shortcut icon"
-          href="https://image.flaticon.com/icons/png/512/931/931949.png"
+          href="https://cdn-icons-png.flaticon.com/512/2666/2666436.png"
         />
       </Head>
       <Header />
       <Hero />
       <AboutMe />
       <Achievements />
-      <Expertise />
+      <Experience />
       <Footer />
       <ScrollToTop />
     </>

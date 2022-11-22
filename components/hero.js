@@ -13,10 +13,15 @@ import { useRef, useEffect, useState } from "react";
 
 export default function Hero() {
   const [documentId, setDocumentId] = useState(null);
-  // const scrollRef = useRef(null);
-  const executeScroll = () => {
-    useRef(document.getElementById(documentId)).current.scrollIntoView();
-  };
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    if (documentId) {
+      scrollRef.current = document.getElementById(documentId);
+      scrollRef.current.scrollIntoView({ behavior: "smooth" });
+      setDocumentId(null);
+    }
+  }, [documentId]);
 
   return (
     <Container maxW={"5xl"}>
@@ -56,17 +61,34 @@ export default function Hero() {
             bg={"orange.400"}
             _hover={{ bg: "orange.500" }}
           >
-            <LinkOverlay
-              onClick={() => setDocumentId("aboutMe") && executeScroll}
-            >
+            <LinkOverlay onClick={() => setDocumentId("aboutMe")}>
               About Me
             </LinkOverlay>
           </Button>
 
-          <Button rounded={"full"} px={6}>
-            <LinkOverlay href="/#achievements">Achievements</LinkOverlay>
+          <Button
+            rounded={"full"}
+            px={6}
+            colorScheme={"orange"}
+            bg={"orange.400"}
+            _hover={{ bg: "orange.500" }}
+          >
+            <LinkOverlay onClick={() => setDocumentId("achievements")}>
+              Achievements
+            </LinkOverlay>
           </Button>
         </Stack>
+        <Button
+          rounded={"full"}
+          px={6}
+          colorScheme={"orange"}
+          bg={"orange.400"}
+          _hover={{ bg: "orange.500" }}
+        >
+          <LinkOverlay onClick={() => setDocumentId("experience")}>
+            Experiences
+          </LinkOverlay>
+        </Button>
         <Flex w={"full"}>
           <Illustration
             height={{ sm: "24rem", lg: "28rem" }}
