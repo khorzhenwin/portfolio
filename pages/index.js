@@ -1,7 +1,8 @@
 import Header from "../components/header";
 import Hero from "../components/hero";
 import AboutMe from "../components/aboutMe";
-import Projects from "../components/carrousel";
+import Achievements from "../components/carrousel";
+import Expertise from "../components/cards";
 import Footer from "../components/footer";
 import ScrollToTop from "../components/scrollToTop";
 import Head from "next/head";
@@ -19,7 +20,8 @@ export default function Home() {
       <Header />
       <Hero />
       <AboutMe />
-      <Projects />
+      <Achievements />
+      <Expertise />
       <Footer />
       <ScrollToTop />
     </>

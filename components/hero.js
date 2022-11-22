@@ -9,8 +9,15 @@ import {
   Link,
   LinkOverlay,
 } from "@chakra-ui/react";
+import { useRef, useEffect, useState } from "react";
 
 export default function Hero() {
+  const [documentId, setDocumentId] = useState(null);
+  // const scrollRef = useRef(null);
+  const executeScroll = () => {
+    useRef(document.getElementById(documentId)).current.scrollIntoView();
+  };
+
   return (
     <Container maxW={"5xl"}>
       <Stack
@@ -49,7 +56,11 @@ export default function Hero() {
             bg={"orange.400"}
             _hover={{ bg: "orange.500" }}
           >
-            <LinkOverlay href="/#aboutMe">About Me</LinkOverlay>
+            <LinkOverlay
+              onClick={() => setDocumentId("aboutMe") && executeScroll}
+            >
+              About Me
+            </LinkOverlay>
           </Button>
 
           <Button rounded={"full"} px={6}>
