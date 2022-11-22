@@ -79,8 +79,8 @@ function TestimonialCard(props) {
       </Flex>
       <Avatar
         src={avatar}
-        height={"80px"}
-        width={"80px"}
+        height={"100px"}
+        width={"100px"}
         alignSelf={"center"}
         m={{ base: "0 0 35px 0", md: "0 0 0 50px" }}
       />

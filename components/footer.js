@@ -7,7 +7,7 @@ import {
   useColorModeValue,
   VisuallyHidden,
 } from "@chakra-ui/react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const SocialButton = ({ children, label, href }) => {
   return (
@@ -66,6 +66,13 @@ export default function SmallWithSocial() {
             isExternal
           >
             <FaLinkedin />
+          </SocialButton>
+          <SocialButton
+            label={"Email"}
+            href={"mailto:khorzhenwin@gmail.com"}
+            isExternal
+          >
+            <FaEnvelope />
           </SocialButton>
         </Stack>
       </Container>
