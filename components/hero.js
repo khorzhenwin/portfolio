@@ -30,14 +30,16 @@ export default function Hero() {
           </Text>
         </Heading>
         <Text color={"gray.500"} maxW={"3xl"}>
-          My friends asked my why I didn't have my own portfolio website,
-          knowing that i full well had the capabilities to do so. So here I am
-          making a somewhat presentable one made purely from templates that i
-          pulled off from{" "}
+          My friends asked my why I did not have my own portfolio website,
+          knowing that i full well had the capabilities to do so. Short answer
+          is because im lazy 🤭. So here I am with a somewhat presentable one
+          made purely from open source templates that i stole off from{" "}
           <Link href="https://chakra-templates.dev" isExternal>
             Chakra Templates.{" "}
           </Link>
           This site was made using Next.js and Chakra UI.
+          <br /> <br />
+          PS: Please use dark theme, its better for your eyes.
         </Text>
         <Stack spacing={6} direction={"row"}>
           <Button
@@ -51,7 +53,7 @@ export default function Hero() {
           </Button>
 
           <Button rounded={"full"} px={6}>
-            Achievements
+            <LinkOverlay href="/#achievements">Achievements</LinkOverlay>
           </Button>
         </Stack>
         <Flex w={"full"}>
