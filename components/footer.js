@@ -6,6 +6,7 @@ import {
   Text,
   useColorModeValue,
   VisuallyHidden,
+  Link,
 } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
@@ -53,20 +54,16 @@ export default function SmallWithSocial() {
           this.
         </Text>
         <Stack direction={"row"} spacing={6}>
-          <SocialButton
-            label={"GitHub"}
-            href={"https://github.com/khorzhenwin"}
-            isExternal
-          >
-            <FaGithub />
-          </SocialButton>
-          <SocialButton
-            label={"LinkedIn"}
-            href={"https://linkedin.com/in/khorzhenwin"}
-            isExternal
-          >
-            <FaLinkedin />
-          </SocialButton>
+          <Link href={"https://github.com/khorzhenwin"} isExternal>
+            <SocialButton label={"GitHub"}>
+              <FaGithub />
+            </SocialButton>
+          </Link>
+          <Link href={"https://linkedin.com/in/khorzhenwin"} isExternal>
+            <SocialButton label={"LinkedIn"}>
+              <FaLinkedin />
+            </SocialButton>
+          </Link>
           <SocialButton
             label={"Email"}
             href={"mailto:khorzhenwin@gmail.com"}
