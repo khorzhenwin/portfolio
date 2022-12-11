@@ -13,70 +13,77 @@ function getAuthorizationPath() {
   return `${PATH}?client_id=${clientId}&response_type=${responseType}&redirect_uri=${redirectUri}&scope=${scope}&show_dialog=true`;
 }
 
-async function getToken(authCode) {
-  const path = "https://accounts.spotify.com/api/token";
-
-  const body = querystring.stringify({
-    grant_type: "authorization_code",
-    code: authCode,
-    redirect_uri: encodeURI(process.env.NEXT_PUBLIC_REDIRECT_URI),
-    client_id: process.env.NEXT_PUBLIC_CLIENT_ID,
-    client_secret: process.env.NEXT_PUBLIC_CLIENT_SECRET,
-  });
-
-  const header = {
-    "Content-Type": "application/x-www-form-urlencoded",
-    Authorization:
-      "Basic " +
-      Buffer.from(
-        process.env.NEXT_PUBLIC_CLIENT_ID +
-          ":" +
-          process.env.NEXT_PUBLIC_CLIENT_SECRET
-      ).toString("base64"),
-  };
-
-  const response = await fetch(path, {
-    method: "POST",
-    headers: header,
-    body,
-  });
-  console.log(response);
-  return response;
-}
-
 export default function Spotify() {
   const [url, setUrl] = useState(null);
   const [authCode, setAuthCode] = useState(null);
-  const [token, setToken] = useState(null);
+  const [accessToken, setAccessToken] = useState(null);
+  const [refreshToken, setRefreshToken] = useState(null);
 
-  useEffect(() => {
-    if (url) window.location.href = url;
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    setAuthCode(urlParams.get("code"));
-  }, [url]);
+  async function getToken(authCode) {
+    const path = "https://accounts.spotify.com/api/token";
+
+    const body = querystring.stringify({
+      grant_type: "authorization_code",
+      code: authCode,
+      redirect_uri: encodeURI(process.env.NEXT_PUBLIC_REDIRECT_URI),
+      client_id: process.env.NEXT_PUBLIC_CLIENT_ID,
+      client_secret: process.env.NEXT_PUBLIC_CLIENT_SECRET,
+    });
+
+    const header = {
+      "Content-Type": "application/x-www-form-urlencoded",
+      Authorization:
+        "Basic " +
+        Buffer.from(
+          process.env.NEXT_PUBLIC_CLIENT_ID +
+            ":" +
+            process.env.NEXT_PUBLIC_CLIENT_SECRET
+        ).toString("base64"),
+    };
+
+    const response = await fetch(path, {
+      method: "POST",
+      headers: header,
+      body,
+    });
+    return response.json();
+  }
 
   useEffect(() => {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     if (urlParams.has("code")) {
-      const code = urlParams.get("code");
-      if (code) {
-        setAuthCode(urlParams.get("code"));
-        setToken(getToken(code).toString());
-        console.log(token);
-      }
+      urlParams.get("code")
+        ? setAuthCode(urlParams.get("code"))
+        : setAuthCode(null);
     }
   }, [authCode]);
 
-  // localStorage.setItem("client_id", process.env.CLIENT_ID);
-  // localStorage.setItem("client_secret", process.env.CLIENT_SECRET);
-  // localStorage.setItem("redirect_uri", process.env.REDIRECT_URI);
+  useEffect(() => {
+    if (url) {
+      window.location.href = url;
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      setAuthCode(urlParams.get("code"));
+    }
+
+    if (authCode) {
+      getToken(authCode).then((res) => {
+        setAccessToken(res.access_token);
+        setRefreshToken(res.refresh_token);
+      });
+    }
+  }, [url, authCode]);
+
   return (
     <>
       <Button onClick={() => setUrl(getAuthorizationPath())}>Login</Button>
-      <p>{authCode}</p>
-      <p>{token}</p>
+      <p>AuthCode: {authCode}</p>
+      <br />
+      <p>AccessToken: {accessToken}</p>
+      <br />
+      <p>RefreshToken: {refreshToken}</p>
+      <br />
     </>
   );
 }
