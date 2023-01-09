@@ -18,7 +18,7 @@ const SocialButton = ({ children, label, href }) => {
       w={8}
       h={8}
       cursor={"pointer"}
-      as={"a"}
+      as={"div"}
       href={href}
       display={"inline-flex"}
       alignItems={"center"}
