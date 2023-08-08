@@ -20,21 +20,20 @@ import { MoonIcon, SunIcon, StarIcon } from "@chakra-ui/icons";
 
 export default function Nav() {
   const { colorMode, toggleColorMode } = useColorMode();
-  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Box bg={useColorModeValue("gray.400", "gray.700")} px={4}>
+      <Box px={4} pt={2}>
         <Flex alignItems={"center"} justifyContent={"space-between"}>
           <Box>
-            <Link href="/">
+            {/* <Link href="/">
               <StarIcon h={14} />
-            </Link>
+            </Link> */}
           </Box>
           <Flex alignItems={"center"}>
             <Stack direction={"row"} spacing={7}>
-              <Button onClick={toggleColorMode}>
+              {/* <Button onClick={toggleColorMode}>
                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-              </Button>
+              </Button> */}
 
               <Menu>
                 <MenuButton
@@ -67,7 +66,6 @@ export default function Nav() {
                   </Center>
                   <br />
                   <MenuDivider />
-                  {/* <MenuItem>Logout</MenuItem> */}
                 </MenuList>
               </Menu>
             </Stack>
