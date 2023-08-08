@@ -14,7 +14,6 @@ import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import { useState } from "react";
 import Slider from "react-slick";
 
-// Settings for the slider
 const settings = {
   dots: true,
   arrows: false,
@@ -38,9 +37,9 @@ export default function CaptionCarousel() {
       index: 0,
       key: 0,
       title: "Karuna HackWknd 2021: Mobile Application Category",
-      subTitle: "1st Place - Team Alpacaverse",
+      subTitle: "Champion - Team Alpacaverse",
       text: "A mobile application made with Java was proposed to tackle the event industry's inventory management issues by integrating a shopping cart model and QR scanning to optimize & increase efficiency across multiple storage locations.",
-      image: "../resources/images/karuna.jpg",
+      image: "",
     },
     {
       index: 1,
@@ -48,7 +47,7 @@ export default function CaptionCarousel() {
       title: "Varsity Hackathon 2022",
       subTitle: "4th Place - Team Alpacaverse",
       text: "A GUI prototype made on Figma aimed to simplify and shorten the donation process for Malaysians in need. Creating a seamless ecosystem that involves multiple user groups is able to garner a larger userbase. The proposition to implement a thrifting e-commerce model into the donation model, would promote self-sustainability.",
-      image: "../resources/images/varsity.jpg",
+      image: "",
       reference:
         "https://www.figma.com/file/1SaAe6Lzs7QGXXAg4UwkGl/AlapacaHelp?node-id=0%3A1",
     },
@@ -64,8 +63,24 @@ export default function CaptionCarousel() {
       index: 3,
       key: 3,
       title: "UM Hackathon 2023",
-      subTitle: "1st Place - Team Alpacaverse",
+      subTitle: "Champion - Team Alpacaverse",
       text: "Proposing AlpacaCare which is an AI-powered health monitoring application designed to alleviate the pain points of expectant mothers. By providing predictions on the health of both mother and fetus, the platform delivers personalized knowledge resources and service recommendations to support mothers throughout their pregnancy journey. The platform also offers ready-to-eat meals and health supplements, as well as access to online specialist consultants to address each mother's unique needs.",
+      image: "",
+    },
+    {
+      index: 4,
+      key: 4,
+      title: "StandardChartered ImpactHack 2023",
+      subTitle: "Champion - Team DoBetter",
+      text: "BizFlow is a centralised data intelligence solution that empowers businesses to harness and leverage their data with seamless integration, actionable insights and AI-driven automation.",
+      image: "",
+    },
+    {
+      index: 5,
+      key: 5,
+      title: "Hacktitude Malaysia 2023",
+      subTitle: "Champion - Team JohnPizza",
+      text: " Implementing backend functionalities in an Express.js server, ranging from implementing complex SQL queries, to building backend services which was verified through automated testing on Jest",
       image: "",
     },
   ];
@@ -74,8 +89,7 @@ export default function CaptionCarousel() {
     <>
       <Center>
         <chakra.h3
-          mt={{ lg: 10 }}
-          mb={{ lg: 5 }}
+          mt={{ base: 8, lg: 12 }}
           fontWeight={"bold"}
           fontSize={20}
           textTransform={"uppercase"}
@@ -87,11 +101,10 @@ export default function CaptionCarousel() {
       </Center>
       <Box
         position={"relative"}
-        height={"500px"}
+        height={"520px"}
         width={"full"}
         overflow={"hidden"}
       >
-        {/* CSS files for react-slick */}
         <link
           rel="stylesheet"
           type="text/css"
@@ -103,7 +116,6 @@ export default function CaptionCarousel() {
           type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
         />
-        {/* Left Icon */}
         <IconButton
           aria-label="left-arrow"
           variant="ghost"
@@ -116,7 +128,6 @@ export default function CaptionCarousel() {
         >
           <BiLeftArrowAlt size="40px" />
         </IconButton>
-        {/* Right Icon */}
         <IconButton
           aria-label="right-arrow"
           variant="ghost"
@@ -129,7 +140,6 @@ export default function CaptionCarousel() {
         >
           <BiRightArrowAlt size="40px" />
         </IconButton>
-        {/* Slider */}
         <Slider {...settings} ref={(slider) => setSlider(slider)}>
           {cards.map((card, key, index) => (
             <Box
@@ -139,9 +149,7 @@ export default function CaptionCarousel() {
               backgroundPosition="center"
               backgroundRepeat="no-repeat"
               backgroundSize="cover"
-              // backgroundImage={`url(${card.image})`}
             >
-              {/* This is the block you need to change, to customize the caption */}
               <Container size="container.lg" height="600px" position="relative">
                 <Stack
                   spacing={5}
@@ -156,11 +164,12 @@ export default function CaptionCarousel() {
                   <Heading
                     fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
                     align={"center"}
+                    color={"gray.100"}
                   >
                     {card.title}
                   </Heading>
                   <Text
-                    bgGradient="linear(to-l, #7928CA, #FF0080)"
+                    bgGradient="linear(to-r, orange.500, orange.300)"
                     bgClip="text"
                     fontSize={{ base: "md", md: "lg", lg: "xl" }}
                     fontWeight="bold"
@@ -168,7 +177,11 @@ export default function CaptionCarousel() {
                     {card.subTitle}
                   </Text>
                   <Box w={"80%"}>
-                    <Text fontSize={{ base: "sm", lg: "md" }} align={"center"}>
+                    <Text
+                      fontSize={{ base: "sm", lg: "md" }}
+                      align={"center"}
+                      color={"gray.300"}
+                    >
                       {card.text}
                     </Text>
                   </Box>

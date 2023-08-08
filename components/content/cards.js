@@ -13,19 +13,16 @@ import {
 } from "@chakra-ui/react";
 
 const Testimonial = ({ children }) => {
-  return <Box>{children}</Box>;
+  return (
+    <Box bg={"blackAlpha.400"} rounded={"xl"} boxShadow={"xl"}>
+      {children}
+    </Box>
+  );
 };
 
 const TestimonialContent = ({ children }) => {
   return (
-    <Stack
-      bg={useColorModeValue("white", "gray.700")}
-      boxShadow={"lg"}
-      p={8}
-      rounded={"xl"}
-      align={"center"}
-      pos={"relative"}
-    >
+    <Stack p={8} align={"center"} pos={"relative"}>
       {children}
     </Stack>
   );
@@ -33,7 +30,7 @@ const TestimonialContent = ({ children }) => {
 
 const TestimonialHeading = ({ children }) => {
   return (
-    <Heading as={"h3"} fontSize={"xl"}>
+    <Heading as={"h3"} fontSize={"xl"} color={"gray.100"}>
       {children}
     </Heading>
   );
@@ -41,37 +38,16 @@ const TestimonialHeading = ({ children }) => {
 
 const TestimonialText = ({ children }) => {
   return (
-    <Text
-      textAlign={"center"}
-      color={useColorModeValue("gray.600", "gray.400")}
-      fontSize={"sm"}
-    >
+    <Text textAlign={"center"} color={"gray.400"} fontSize={"sm"}>
       {children}
     </Text>
   );
 };
 
-const TestimonialAvatar = ({ src, name, title }) => {
-  return (
-    <Flex align={"center"} mt={8} direction={"column"}>
-      <Avatar src={src} alt={name} mb={2} />
-      <Stack spacing={-1} align={"center"}>
-        <Text fontWeight={600}>{name}</Text>
-        <Text fontSize={"sm"} color={useColorModeValue("gray.600", "gray.400")}>
-          {title}
-        </Text>
-      </Stack>
-    </Flex>
-  );
-};
-
 export default function WithSpeechBubbles() {
   return (
-    <Box
-      id="experience"
-      // bg={useColorModeValue("gray.100", "gray.700")}
-    >
-      <Container maxW={"7xl"} py={16} as={Stack} spacing={12} mb={{ lg: 5 }}>
+    <Box id="experience">
+      <Container maxW={"7xl"} py={8} as={Stack} spacing={12} mb={{ lg: 5 }}>
         <VStack spacing={0} alignItems={"center"}>
           <chakra.h3
             fontWeight={"bold"}
@@ -82,8 +58,10 @@ export default function WithSpeechBubbles() {
           >
             My Experience
           </chakra.h3>
-          <Heading align={"center"}>What roles am I familiar with?</Heading>
-          <Text align={"center"}>
+          <Heading align={"center"} color={"gray.100"}>
+            What roles am I familiar with?
+          </Heading>
+          <Text align={"center"} color={"gray.200"}>
             I got to experience multiple functional and technical roles during
             my two internships
           </Text>
