@@ -30,7 +30,7 @@ const TestimonialContent = ({ children }) => {
 
 const TestimonialHeading = ({ children }) => {
   return (
-    <Heading as={"h3"} fontSize={"xl"} color={"gray.100"}>
+    <Heading as={"h3"} fontSize={"lg"} color={"gray.100"} textAlign={"center"} >
       {children}
     </Heading>
   );
@@ -56,10 +56,10 @@ export default function WithSpeechBubbles() {
             textTransform={"uppercase"}
             color={"orange.400"}
           >
-            My Experience
+            My Internship Experiences
           </chakra.h3>
           <Heading align={"center"} color={"gray.100"}>
-            What roles am I familiar with?
+            What roles did I work in?
           </Heading>
           <Text align={"center"} color={"gray.200"}>
             I got to experience multiple functional and technical roles during
@@ -94,9 +94,9 @@ export default function WithSpeechBubbles() {
             <TestimonialContent>
               <TestimonialHeading>Frontend Development</TestimonialHeading>
               <TestimonialText>
-                Currently developing FYP using React, Next.js, Chakra UI,
-                MantineUI, and recharts. Proficiently learning best practices of
-                state management using zustand.
+                Multiple hackathon & pet projects using React, Next.js, Chakra
+                UI, MantineUI, Tailwind and recharts. State management using
+                zustand but never really gotten into tanstack query.
               </TestimonialText>
             </TestimonialContent>
           </Testimonial>
@@ -104,8 +104,9 @@ export default function WithSpeechBubbles() {
             <TestimonialContent>
               <TestimonialHeading>Quality Assurance</TestimonialHeading>
               <TestimonialText>
-                Conducted Manual testing of web and native mobile applications.
-                Explored front-end automated testing using Robot & Selenium.
+                Manual & automated testing of web & native mobile apps
+                using Robot(Python) & Selenium/Katalon. Manual testing of
+                backend services on postman.
               </TestimonialText>
             </TestimonialContent>
           </Testimonial>

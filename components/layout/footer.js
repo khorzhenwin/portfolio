@@ -47,8 +47,8 @@ export default function SmallWithSocial() {
         align={{ base: "center", md: "center" }}
       >
         <Text textAlign={{ base: "center" }}>
-          © 2022 Khor Zhen Win. Completely no rights reserved. I copied all of
-          this.
+          © 2025 Khor Zhen Win. Completely no rights reserved. I copied all of
+          this. Respectfully
         </Text>
         <Stack direction={"row"} spacing={6}>
           <Link href={"https://github.com/khorzhenwin"} isExternal>

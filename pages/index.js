@@ -26,13 +26,13 @@ export default function Home() {
           property="og:description"
           content="Built with Next.js and Chakra UI"
         />
-        <meta property="og:image" content="https://i.imgur.com/n1H5luJ.jpg" />
+        <meta property="og:image" content="https://i.imgur.com/FpE4HAZ.jpeg" />
         <link
           rel="shortcut icon"
           href="https://cdn-icons-png.flaticon.com/512/2666/2666436.png"
         />
       </Head>
-      <Box bgGradient="linear(to-b, blackAlpha.700, gray.600)">
+      <Box bgGradient="linear(to-b, blackAlpha.650, gray.600)">
         {/* <Header /> */}
         <Hero />
         <AboutMe />
