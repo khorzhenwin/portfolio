@@ -21,8 +21,8 @@ export default function Hero() {
 
   const handleDonwload = () => {
     const link = document.createElement("a");
-    link.href = "/KhorZhenWin_CV.pdf";
-    link.download = "KhorZhenWin_CV.pdf";
+    link.href = "/CV.pdf";
+    link.download = "CV.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -45,29 +45,43 @@ export default function Hero() {
         pb={{ base: 20, md: 28 }}
         pt={{ base: 10, md: 20 }}
       >
-        <Heading
-          fontWeight={600}
-          fontSize={{ base: "3xl", sm: "4xl", md: "6xl" }}
-          lineHeight={"110%"}
-          color={"white"}
-        >
-          An{" "}
-          <Text as={"span"} color={"orange.400"}>
-            Introduction!
+        <Stack v={2}>
+          <Heading
+            fontWeight={600}
+            fontSize={{ base: "3xl", sm: "4xl", md: "6xl" }}
+            lineHeight={"110%"}
+            color={"white"}
+          >
+            Can{" "}
+            <Text as={"span"} color={"orange.400"}>
+              You
+            </Text>{" "}
+            Tell Me About{" "}
+            <Text as={"span"} color={"orange.400"}>
+              Yourself?
+            </Text>
+          </Heading>
+          <Text fontWeight={600} color={"gray.200"}>
+            No thanks bro, so take a look at this page.
           </Text>
-        </Heading>
-        <Text color={"gray.200"} maxW={"3xl"}>
-          A simple and presentable portfolio made purely from open source
-          templates from{" "}
-          <Link href="https://chakra-templates.dev" isExternal>
-            Chakra Templates.{" "}
-          </Link>
-          This site was made using Next.js and Chakra UI. Connect with me on{" "}
-          <Link href="https://linkedin.com/in/khorzhenwin">LinkedIn</Link>
-        </Text>
+        </Stack>
+        <Stack v={2}>
+          <Text color={"gray.200"} maxW={"3xl"}>
+            Basically what you can do in canva in an hour but I decided to code
+            it instead. Simple portfolio made purely copy pasta from{" "}
+            <Link href="https://chakra-templates.dev" isExternal>
+              Chakra Templates.{" "}
+            </Link>
+            This site was made using Next.js and Chakra UI.
+          </Text>
+          <Text color={"gray.200"} maxW={"3xl"}>
+            Connect with me on{" "}
+            <Link href="https://linkedin.com/in/khorzhenwin">LinkedIn</Link>
+          </Text>
+        </Stack>
         <Button
           color="white"
-          rounded={"full"}
+          rounded={"md"}
           px={6}
           bg={"blue.400"}
           _hover={{ bg: "blue.500" }}
@@ -77,9 +91,9 @@ export default function Hero() {
           Download CV
         </Button>
         <Box color="gray.500" direction={"column"}>
-          <Stack spacing={6} direction={"row"} pb={4}>
+          <Stack spacing={2} direction={"row"} pb={2}>
             <Button
-              rounded={"full"}
+              rounded={"md"}
               px={6}
               colorScheme={"orange"}
               bg={"orange.400"}
@@ -90,7 +104,7 @@ export default function Hero() {
               </LinkOverlay>
             </Button>
             <Button
-              rounded={"full"}
+              rounded={"md"}
               px={6}
               colorScheme={"orange"}
               bg={"orange.400"}
@@ -101,17 +115,20 @@ export default function Hero() {
               </LinkOverlay>
             </Button>
           </Stack>
-          <Button
-            rounded={"full"}
-            px={6}
-            colorScheme={"orange"}
-            bg={"orange.400"}
-            _hover={{ bg: "orange.500" }}
-          >
-            <LinkOverlay onClick={() => setDocumentId("achievements")}>
-              Achievements
-            </LinkOverlay>
-          </Button>
+          {/* LEAVE THE STACK, ITS EASIER TO RENDER MOBILE */}
+          <Stack spacing={2} pb={2}>
+            <Button
+              rounded={"md"}
+              px={6}
+              colorScheme={"orange"}
+              bg={"orange.400"}
+              _hover={{ bg: "orange.500" }}
+            >
+              <LinkOverlay onClick={() => setDocumentId("achievements")}>
+                Achievements
+              </LinkOverlay>
+            </Button>
+          </Stack>
         </Box>
         <Flex w={"full"}>
           <Illustration

@@ -99,98 +99,104 @@ export default function CaptionCarousel() {
           Hackathons & Competitions
         </chakra.h3>
       </Center>
-      <Box
-        position={"relative"}
-        height={"520px"}
-        width={"full"}
-        overflow={"hidden"}
-      >
-        <link
-          rel="stylesheet"
-          type="text/css"
-          charSet="UTF-8"
-          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-        />
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-        />
-        <IconButton
-          aria-label="left-arrow"
-          variant="ghost"
-          position="absolute"
-          left={side}
-          top={top}
-          transform={"translate(0%, -50%)"}
-          zIndex={2}
-          onClick={() => slider?.slickPrev()}
+      <Center>
+        <Box
+          position={"relative"}
+          height={"520px"}
+          width={"full"}
+          overflow={"hidden"}
         >
-          <BiLeftArrowAlt size="40px" />
-        </IconButton>
-        <IconButton
-          aria-label="right-arrow"
-          variant="ghost"
-          position="absolute"
-          right={side}
-          top={top}
-          transform={"translate(0%, -50%)"}
-          zIndex={2}
-          onClick={() => slider?.slickNext()}
-        >
-          <BiRightArrowAlt size="40px" />
-        </IconButton>
-        <Slider {...settings} ref={(slider) => setSlider(slider)}>
-          {cards.map((card, key, index) => (
-            <Box
-              key={key + index}
-              height={"4xl"}
-              position="relative"
-              backgroundPosition="center"
-              backgroundRepeat="no-repeat"
-              backgroundSize="cover"
-            >
-              <Container size="container.lg" height="600px" position="relative">
-                <Stack
-                  spacing={5}
-                  w={"full"}
-                  maxW={"lg"}
+          <link
+            rel="stylesheet"
+            type="text/css"
+            charSet="UTF-8"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+          />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+          />
+          <IconButton
+            aria-label="left-arrow"
+            variant="ghost"
+            position="absolute"
+            left={side}
+            top={top}
+            transform={"translate(0%, -50%)"}
+            zIndex={2}
+            onClick={() => slider?.slickPrev()}
+          >
+            <BiLeftArrowAlt size="40px" />
+          </IconButton>
+          <IconButton
+            aria-label="right-arrow"
+            variant="ghost"
+            position="absolute"
+            right={side}
+            top={top}
+            transform={"translate(0%, -50%)"}
+            zIndex={2}
+            onClick={() => slider?.slickNext()}
+          >
+            <BiRightArrowAlt size="40px" />
+          </IconButton>
+          <Slider {...settings} ref={(slider) => setSlider(slider)}>
+            {cards.map((card, key, index) => (
+              <Box
+                key={key + index}
+                height={"4xl"}
+                position="relative"
+                backgroundPosition="center"
+                backgroundRepeat="no-repeat"
+                backgroundSize="cover"
+              >
+                <Container
+                  size="container.lg"
+                  height="600px"
                   position="relative"
-                  top="40%"
-                  transform="translate(0, -50%)"
-                  alignItems={"center"}
-                  justifyContent={"center"}
                 >
-                  <Heading
-                    fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
-                    align={"center"}
-                    color={"gray.100"}
+                  <Stack
+                    spacing={5}
+                    w={"full"}
+                    maxW={"lg"}
+                    position="relative"
+                    top="40%"
+                    transform="translate(0, -50%)"
+                    alignItems={"center"}
+                    justifyContent={"center"}
                   >
-                    {card.title}
-                  </Heading>
-                  <Text
-                    bgGradient="linear(to-r, orange.500, orange.300)"
-                    bgClip="text"
-                    fontSize={{ base: "md", md: "lg", lg: "xl" }}
-                    fontWeight="bold"
-                  >
-                    {card.subTitle}
-                  </Text>
-                  <Box w={"80%"}>
-                    <Text
-                      fontSize={{ base: "sm", lg: "md" }}
+                    <Heading
+                      fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
                       align={"center"}
-                      color={"gray.300"}
+                      color={"gray.100"}
                     >
-                      {card.text}
+                      {card.title}
+                    </Heading>
+                    <Text
+                      bgGradient="linear(to-r, orange.500, orange.300)"
+                      bgClip="text"
+                      fontSize={{ base: "md", md: "lg", lg: "xl" }}
+                      fontWeight="bold"
+                    >
+                      {card.subTitle}
                     </Text>
-                  </Box>
-                </Stack>
-              </Container>
-            </Box>
-          ))}
-        </Slider>
-      </Box>
+                    <Box w={"80%"}>
+                      <Text
+                        fontSize={{ base: "sm", lg: "md" }}
+                        align={"center"}
+                        color={"gray.300"}
+                      >
+                        {card.text}
+                      </Text>
+                    </Box>
+                  </Stack>
+                </Container>
+              </Box>
+            ))}
+          </Slider>
+        </Box>
+      </Center>
     </>
   );
 }

@@ -6,52 +6,63 @@ import {
   SimpleGrid,
   useColorModeValue,
   Text,
+  Heading,
 } from "@chakra-ui/react";
 
 const testimonials = [
   {
     key: 1,
     name: "Khor Zhen Win",
-    role: "Final Year CS Student",
+    role: "Backend Engineer @ MoneyLion",
     content:
-      "More of a technical person who enjoys logical thinking but is also able to see things from a functional perspective. Learning to be a good programmer, not just a passionate one.",
-    avatar: "https://i.imgur.com/n1H5luJ.jpg",
+      "Data Analytics major that decided to go rogue into software engineering. Around 2 years of experience in backend. Trying to be a good programmer, not just a passionate one. People relations are important no matter how godly of an individual contributor you are.",
+    avatar: "https://i.imgur.com/FpE4HAZ.jpeg",
+  },
+  {
+    key: 2,
+    name: "Current Job",
+    content:
+      "Backend Engineer in Moneylion for the Payments Team. Whole bunch of jargons like CQRS, Event Sourcing, Saga pattern,  Serverless Webhook Listeners, and many more. Think of it as a glorified aggregator of payment service providers. Tested till 100 TPS",
   },
 ];
 
 function TestimonialCard(props) {
-  const { content, avatar } = props;
+  const { content, avatar, name } = props;
   return (
-    <Box boxShadow={"xl"} width={"full"} rounded={"xl"} bg={"blackAlpha.300"}>
+    <Box boxShadow={"xl"} width={"full"} rounded={"md"} bg={"blackAlpha.300"}>
       <Flex
         maxW={"640px"}
         direction={{ base: "column-reverse", md: "row" }}
-        p={10}
-        justifyContent={"space-between"}
+        p={8}
+        // justifyContent={"space-between"}
         position={"relative"}
       >
         <Flex
           direction={"column"}
-          textAlign={{ base: "center", md: "justify" }}
-          justifyContent={"space-between"}
+          textAlign={{ base: "center", md: "left" }}
+          // justifyContent={"space-between"}
         >
+          <Text fontWeight={"medium"} fontSize={"25px"} pb={4}>
+            {name}
+          </Text>
           <Text
             fontWeight={"medium"}
             fontSize={"15px"}
             pb={4}
             color={"gray.200"}
           >
-            A final year student @ APU Malaysia studying Computer Science (Data
-            Analytics). {content}
+            {content}
           </Text>
         </Flex>
-        <Avatar
-          src={avatar}
-          height={"100px"}
-          width={"100px"}
-          alignSelf={"center"}
-          m={{ base: "0 0 35px 0", md: "0 0 0 50px" }}
-        />
+        {avatar && (
+          <Avatar
+            src={avatar}
+            height={"100px"}
+            width={"100px"}
+            alignSelf={"center"}
+            m={{ base: "0 0 35px 0", md: "0 0 0 50px" }}
+          />
+        )}
       </Flex>
     </Box>
   );
@@ -91,8 +102,8 @@ export default function AboutMe() {
           </Box>
           <SimpleGrid
             columns={{ base: 1, xl: 1 }}
-            spacing={"20"}
-            my={8}
+            spacing={"5"}
+            my={2}
             mx={"auto"}
           >
             {testimonials.map((cardInfo, index, key) => (
