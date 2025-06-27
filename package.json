@@ -9,13 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@babel/runtime": "^7.27.6",
     "@chakra-ui/icons": "^2.2.4",
     "@chakra-ui/react": "^2.10.7",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "brace-expansion": "^4.0.1",
+    "braces": "^3.0.3",
     "eslint": "^9.26.0",
     "eslint-config-next": "^15.3.1",
     "framer-motion": "^12.9.4",
+    "micromatch": "^4.0.8",
+    "nanoid": "^5.1.5",
     "next": "^15.3.1",
     "querystring": "^0.2.1",
     "react": "^19.1.0",
