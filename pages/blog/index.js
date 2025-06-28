@@ -5,7 +5,7 @@ import Head from "next/head";
 import { Box } from "@chakra-ui/react";
 import BlogList from "../../components/content/blogList";
 
-export default function Home() {
+export default function Blog() {
   return (
     <>
       <Head>

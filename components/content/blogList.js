@@ -1,35 +1,64 @@
 import { ChevronRightIcon } from "@chakra-ui/icons";
-import { useRouter } from "next/router";
-import {
-  Avatar,
-  Box,
-  chakra,
-  Flex,
-  SimpleGrid,
-  Text,
-  Button,
-  HStack,
-} from "@chakra-ui/react";
+import { Avatar, Box, chakra, Flex, Badge, Text, Link } from "@chakra-ui/react";
 
 const sections = [
   {
     title: "Personal Projects",
-    redirectPath: "/blog/post-1",
+    posts: [
+      {
+        avatar: "https://i.imgur.com/p1c9rvg.jpeg",
+        headline: "Baited into buying a home server",
+        subheadline:
+          "Journey of setting up a home server because cloud is expensive",
+        badge: "June 2025",
+        redirectPath: "/blog/personal-01",
+      },
+    ],
   },
   {
     title: "Work 💻",
-    redirectPath: "/blog/post-2",
+    posts: [],
   },
   {
     title: "Social",
-    redirectPath: "/blog/post-3",
+    posts: [],
   },
 ];
 
-function Section(props) {
-  const { title, description, redirectPath } = props;
+function Card(props) {
+  const { avatar, headline, subheadline, badge, redirectPath } = props;
   return (
-    <Box py={4}>
+    <>
+      <Link href={redirectPath} _hover={{ textDecoration: "none" }}>
+        <Flex>
+          <Avatar src={avatar} />
+          <Box ml="3">
+            <Text fontWeight="bold">
+              {headline}
+              {badge && (
+                <Badge ml="1" colorScheme="orange">
+                  {badge}
+                </Badge>
+              )}
+            </Text>
+            <Text fontSize="sm">{subheadline}</Text>
+          </Box>
+          <ChevronRightIcon
+            boxSize={12}
+            color={"orange.400"}
+            ml="auto"
+            cursor="pointer"
+          />
+        </Flex>
+      </Link>
+    </>
+  );
+}
+
+function Section(props) {
+  const { title, posts } = props;
+  return (
+    <Box py={4} pb={12}>
       <chakra.h3
         fontWeight={"bold"}
         fontSize={15}
@@ -39,18 +68,18 @@ function Section(props) {
       >
         {title}
       </chakra.h3>
+      {posts.length != 0 &&
+        posts.map((post, index, key) => (
+          <Card {...post} index={index} key={index} />
+        ))}
     </Box>
   );
 }
 
 export default function BlogList() {
-  const router = useRouter();
   return (
     <>
-      <Box
-        my={{ base: 20, md: 30, lg: 30, xl: 35 }}
-        mx={{ base: 7, md: 0 }}
-      >
+      <Box my={{ base: 20, md: 30, lg: 30, xl: 35 }} mx={{ base: 7, md: 0 }}>
         <Flex direction={"column"} width={"full"}>
           <Box width={{ base: "full", sm: "lg", lg: "xl" }} margin={"auto"}>
             <chakra.h2
