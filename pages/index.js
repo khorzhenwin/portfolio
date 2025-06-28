@@ -33,7 +33,7 @@ export default function Home() {
         />
       </Head>
       <Box bgGradient="linear(to-b, blackAlpha.650, gray.600)">
-        {/* <Header /> */}
+        <Header />
         <Hero />
         <AboutMe />
         <Experience />

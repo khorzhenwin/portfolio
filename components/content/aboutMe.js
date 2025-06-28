@@ -1,12 +1,11 @@
+import { ChevronRightIcon } from "@chakra-ui/icons";
+import { useRouter } from 'next/router';
 import {
   Avatar,
   Box,
   chakra,
   Flex,
-  SimpleGrid,
-  useColorModeValue,
-  Text,
-  Heading,
+  SimpleGrid, Text, Button, HStack
 } from "@chakra-ui/react";
 
 const testimonials = [
@@ -17,6 +16,7 @@ const testimonials = [
     content:
       "Data Analytics major that decided to go rogue into software engineering. Around 2 years of experience in backend. Trying to be a good programmer, not just a passionate one. People relations are important no matter how godly of an individual contributor you are.",
     avatar: "https://i.imgur.com/FpE4HAZ.jpeg",
+    redirectPath: "/blog",
   },
   {
     key: 2,
@@ -27,7 +27,8 @@ const testimonials = [
 ];
 
 function TestimonialCard(props) {
-  const { content, avatar, name } = props;
+  const router = useRouter()
+  const { content, avatar, name, redirectPath } = props;
   return (
     <Box boxShadow={"xl"} width={"full"} rounded={"md"} bg={"blackAlpha.300"}>
       <Flex
@@ -53,6 +54,20 @@ function TestimonialCard(props) {
           >
             {content}
           </Text>
+          {redirectPath && (
+            <Button
+              onClick={() => {
+                router.push(redirectPath);
+              }}
+            >
+              <HStack>
+                <Text fontWeight={"bold"} color={"orange.400"}>
+                  Read More
+                </Text>
+                <ChevronRightIcon boxSize={6} color={"orange.400"} />
+              </HStack>
+            </Button>
+          )}
         </Flex>
         {avatar && (
           <Avatar
