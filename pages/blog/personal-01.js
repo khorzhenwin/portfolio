@@ -99,7 +99,7 @@ export default function Blog() {
         />
         <meta property="og:title" content="Khor Zhen Win | Home Server" />
         <meta property="og:description" content="Blogging? no im flogging" />
-        <meta property="og:image" content="https://i.imgur.com/FpE4HAZ.jpeg" />
+        <meta property="og:image" content="https://i.imgur.com/p1c9rvg.jpeg" />
         <link
           rel="shortcut icon"
           href="https://cdn-icons-png.flaticon.com/512/2666/2666436.png"
