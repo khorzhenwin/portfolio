@@ -1,5 +1,14 @@
 import { ChevronRightIcon } from "@chakra-ui/icons";
-import { Avatar, Box, chakra, Flex, Badge, Text, Link } from "@chakra-ui/react";
+import {
+  Avatar,
+  Box,
+  chakra,
+  Flex,
+  Badge,
+  Text,
+  Link,
+  VStack,
+} from "@chakra-ui/react";
 
 const sections = [
   {
@@ -12,12 +21,18 @@ const sections = [
           "Journey of setting up a home server because cloud is expensive",
         badge: "June 2025",
         redirectPath: "/blog/personal-01",
+        badgeColour: "orange"
+      },
+      {
+        avatar: "https://i.imgur.com/YwWrqoz.png",
+        headline: "Learning Golang",
+        subheadline:
+          "Vibe coding my way to a new language",
+        badge: "July 2025",
+        redirectPath: "/blog/personal-02",
+        badgeColour: "purple"
       },
     ],
-  },
-  {
-    title: "Work 💻",
-    posts: [],
   },
   {
     title: "Social",
@@ -26,17 +41,17 @@ const sections = [
 ];
 
 function Card(props) {
-  const { avatar, headline, subheadline, badge, redirectPath } = props;
+  const { avatar, headline, subheadline, badge, redirectPath, badgeColour } = props;
   return (
     <>
       <Link href={redirectPath} _hover={{ textDecoration: "none" }}>
-        <Flex>
+        <Flex py={2}>
           <Avatar src={avatar} />
           <Box ml="3">
             <Text fontWeight="bold">
               {headline}
               {badge && (
-                <Badge ml="1" colorScheme="orange">
+                <Badge ml="1" colorScheme={badgeColour}>
                   {badge}
                 </Badge>
               )}
