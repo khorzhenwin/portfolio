@@ -21,27 +21,37 @@ const sections = [
           "Journey of setting up a home server because cloud is expensive",
         badge: "June 2025",
         redirectPath: "/blog/personal-01",
-        badgeColour: "orange"
+        badgeColour: "orange",
       },
       {
         avatar: "https://i.imgur.com/YwWrqoz.png",
         headline: "Learning Golang",
-        subheadline:
-          "Vibe coding my way to a new language",
+        subheadline: "Vibe coding my way to a new language",
         badge: "July 2025",
         redirectPath: "/blog/personal-02",
-        badgeColour: "purple"
+        badgeColour: "purple",
       },
     ],
   },
   {
     title: "Social",
-    posts: [],
+    posts: [
+      {
+        avatar: "https://i.imgur.com/ZWw76i0.png",
+        headline: "Losing Weight",
+        subheadline:
+          "-36kg in 6 months",
+        badge: "July 2025",
+        redirectPath: "/blog/social-01",
+        badgeColour: "purple",
+      },
+    ],
   },
 ];
 
 function Card(props) {
-  const { avatar, headline, subheadline, badge, redirectPath, badgeColour } = props;
+  const { avatar, headline, subheadline, badge, redirectPath, badgeColour } =
+    props;
   return (
     <>
       <Link href={redirectPath} _hover={{ textDecoration: "none" }}>
@@ -73,13 +83,13 @@ function Card(props) {
 function Section(props) {
   const { title, posts } = props;
   return (
-    <Box py={4} pb={12}>
+    <Box py={4} pb={6}>
       <chakra.h3
         fontWeight={"bold"}
         fontSize={15}
         textTransform={"uppercase"}
         color={"gray.400"}
-        pb={6}
+        pb={2}
       >
         {title}
       </chakra.h3>
