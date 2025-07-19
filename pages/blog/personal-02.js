@@ -106,7 +106,7 @@ export default function Blog() {
         <Header />
         <ArticleLayout
           title={"Learning Golang Because I Am a Salary Slave"}
-          date={"June 2025"}
+          date={"July 2025"}
           content={content}
         />
         <Footer />
