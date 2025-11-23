@@ -28,6 +28,13 @@ export default function ArticleLayout({ title, date, content }) {
             width={{ base: "full", sm: "lg", lg: "xl" }}
             margin={"auto"}
             mt={8}
+            bg="rgba(0, 0, 0, 0.3)"
+            backdropFilter="blur(10px)"
+            border="1px solid rgba(255, 255, 255, 0.1)"
+            p={8}
+            rounded="xl"
+            color="gray.300"
+            lineHeight="tall"
           >
             {content}
           </Box>

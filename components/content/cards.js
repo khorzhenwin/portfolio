@@ -14,7 +14,20 @@ import {
 
 const Testimonial = ({ children }) => {
   return (
-    <Box bg={"blackAlpha.400"} rounded={"xl"} boxShadow={"xl"}>
+    <Box
+      bg="rgba(255, 255, 255, 0.05)"
+      backdropFilter="blur(10px)"
+      border="1px solid rgba(255, 255, 255, 0.1)"
+      rounded={"xl"}
+      boxShadow={"xl"}
+      transition="all 0.3s ease"
+      _hover={{
+        transform: "translateY(-5px)",
+        boxShadow: "2xl",
+        bg: "rgba(255, 255, 255, 0.1)",
+        borderColor: "orange.400",
+      }}
+    >
       {children}
     </Box>
   );
