@@ -25,7 +25,9 @@ export default function Hero() {
   useEffect(() => {
     if (documentId) {
       scrollRef.current = document.getElementById(documentId);
-      scrollRef.current.scrollIntoView({ behavior: "smooth" });
+      if (scrollRef.current) {
+        scrollRef.current.scrollIntoView({ behavior: "smooth" });
+      }
       setDocumentId(null);
     }
   }, [documentId]);
@@ -65,7 +67,7 @@ export default function Hero() {
             colorScheme={"orange"}
             bg={"orange.400"}
             _hover={{ bg: "orange.500" }}
-            onClick={() => setDocumentId("projects")}
+            onClick={() => setDocumentId("achievements")}
           >
             View Projects
           </Button>

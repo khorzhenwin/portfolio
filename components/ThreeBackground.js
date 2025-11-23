@@ -3,7 +3,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
 import * as random from 'maath/random/dist/maath-random.esm';
 
-function Stars(props) {
+function TechNetwork(props) {
   const ref = useRef();
   const [sphere] = useState(() => random.inSphere(new Float32Array(5000), { radius: 1.5 }));
 
@@ -17,7 +17,7 @@ function Stars(props) {
       <Points ref={ref} positions={sphere} stride={3} frustumCulled={false} {...props}>
         <PointMaterial
           transparent
-          color="#ffa0e0"
+          color="#00ffff" // Cyan color for tech feel
           size={0.005}
           sizeAttenuation={true}
           depthWrite={false}
@@ -29,9 +29,9 @@ function Stars(props) {
 
 export default function ThreeBackground() {
   return (
-    <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1, background: '#111' }}>
+    <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1, background: '#0a0a0a' }}>
       <Canvas camera={{ position: [0, 0, 1] }}>
-        <Stars />
+        <TechNetwork />
       </Canvas>
     </div>
   );
