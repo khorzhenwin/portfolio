@@ -36,20 +36,24 @@ const SocialButton = ({ children, label, href }) => {
 
 export default function SmallWithSocial() {
   return (
-    <Box color={"gray.200"}>
-      <Container
-        as={Stack}
-        maxW={"6xl"}
-        py={4}
-        direction={{ base: "column", md: "row" }}
-        spacing={4}
-        justify={{ base: "center", md: "space-between" }}
-        align={{ base: "center", md: "center" }}
+      <Box
+        bg="rgba(0, 0, 0, 0.3)"
+        backdropFilter="blur(10px)"
+        borderTop="1px solid rgba(255, 255, 255, 0.1)"
+        color={"gray.200"}
       >
-        <Text textAlign={{ base: "center" }}>
-          © 2025 Khor Zhen Win. Completely no rights reserved. I copied all of
-          this. Respectfully
-        </Text>
+        <Container
+          as={Stack}
+          maxW={"6xl"}
+          py={8}
+          direction={{ base: "column", md: "row" }}
+          spacing={4}
+          justify={{ base: "center", md: "space-between" }}
+          align={{ base: "center", md: "center" }}
+        >
+          <Text textAlign={{ base: "center" }}>
+            © {new Date().getFullYear()} Khor Zhen Win. Built with Next.js & Chakra UI.
+          </Text>
         <Stack direction={"row"} spacing={6}>
           <Link href={"https://github.com/khorzhenwin"} isExternal>
             <SocialButton label={"GitHub"}>
@@ -69,7 +73,7 @@ export default function SmallWithSocial() {
             <FaEnvelope />
           </SocialButton>
         </Stack>
-      </Container>
-    </Box>
+        </Container>
+      </Box>
   );
 }

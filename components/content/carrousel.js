@@ -165,27 +165,34 @@ export default function CaptionCarousel() {
                     transform="translate(0, -50%)"
                     alignItems={"center"}
                     justifyContent={"center"}
+                    bg="rgba(255, 255, 255, 0.05)"
+                    backdropFilter="blur(10px)"
+                    border="1px solid rgba(255, 255, 255, 0.1)"
+                    p={8}
+                    rounded="xl"
+                    boxShadow="xl"
                   >
                     <Heading
                       fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
                       align={"center"}
-                      color={"gray.100"}
+                      color={"white"}
                     >
                       {card.title}
                     </Heading>
                     <Text
-                      bgGradient="linear(to-r, orange.500, orange.300)"
+                      bgGradient="linear(to-r, orange.400, orange.200)"
                       bgClip="text"
                       fontSize={{ base: "md", md: "lg", lg: "xl" }}
                       fontWeight="bold"
                     >
                       {card.subTitle}
                     </Text>
-                    <Box w={"80%"}>
+                    <Box w={"100%"}>
                       <Text
                         fontSize={{ base: "sm", lg: "md" }}
                         align={"center"}
                         color={"gray.300"}
+                        lineHeight="tall"
                       >
                         {card.text}
                       </Text>

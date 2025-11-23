@@ -55,26 +55,39 @@ function Card(props) {
   return (
     <>
       <Link href={redirectPath} _hover={{ textDecoration: "none" }}>
-        <Flex py={2}>
-          <Avatar src={avatar} />
-          <Box ml="3">
-            <Text fontWeight="bold">
-              {headline}
-              {badge && (
-                <Badge ml="1" colorScheme={badgeColour}>
-                  {badge}
-                </Badge>
-              )}
-            </Text>
-            <Text fontSize="sm">{subheadline}</Text>
-          </Box>
-          <ChevronRightIcon
-            boxSize={12}
-            color={"orange.400"}
-            ml="auto"
-            cursor="pointer"
-          />
-        </Flex>
+        <Box
+          py={4}
+          px={4}
+          rounded="xl"
+          transition="all 0.3s ease"
+          _hover={{
+            bg: "rgba(255, 255, 255, 0.1)",
+            transform: "translateY(-2px)",
+            boxShadow: "lg",
+            borderColor: "rgba(255, 255, 255, 0.1)",
+          }}
+          border="1px solid transparent"
+        >
+          <Flex align="center">
+            <Avatar src={avatar} size="lg" border="2px solid" borderColor="orange.400" />
+            <Box ml="4">
+              <Text fontWeight="bold" fontSize="lg" color="white">
+                {headline}
+                {badge && (
+                  <Badge ml="2" colorScheme={badgeColour} variant="solid" rounded="full" px={2}>
+                    {badge}
+                  </Badge>
+                )}
+              </Text>
+              <Text fontSize="sm" color="gray.300" mt={1}>{subheadline}</Text>
+            </Box>
+            <ChevronRightIcon
+              boxSize={8}
+              color={"orange.400"}
+              ml="auto"
+            />
+          </Flex>
+        </Box>
       </Link>
     </>
   );

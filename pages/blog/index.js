@@ -4,6 +4,7 @@ import ScrollToTop from "../../components/scrollToTop";
 import Head from "next/head";
 import { Box } from "@chakra-ui/react";
 import BlogList from "../../components/content/blogList";
+import ThreeBackground from "../../components/ThreeBackground";
 
 export default function Blog() {
   return (
@@ -26,7 +27,8 @@ export default function Blog() {
           href="https://cdn-icons-png.flaticon.com/512/2666/2666436.png"
         />
       </Head>
-      <Box bgGradient="linear(to-b, blackAlpha.650, gray.600)">
+      <ThreeBackground />
+      <Box position="relative" zIndex={1}>
         <Header />
         <BlogList />
         <Footer />
