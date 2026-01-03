@@ -48,7 +48,7 @@ export default function Hero() {
             lineHeight={"110%"}
             color={"white"}
           >
-            Hello, I'm <br />
+            Hello, I&apos;m <br />
             <Text as={"span"} color={"orange.400"}>
               Khor Zhen Win
             </Text>

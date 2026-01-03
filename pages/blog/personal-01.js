@@ -12,7 +12,7 @@ export default function Blog() {
       <Box textAlign={"justify"}>
         Basically how this started was, I was having my own fun little project
         building something for my own learning (more on this in another post). I
-        didn't tell anyone about it either, I was just doing it for shits and
+        didn&apos;t tell anyone about it either, I was just doing it for shits and
         giggles. Then just on a random Monday, a friend from my university days
         dropped me a message asking if I was interested in buying a home server.
         <Image
@@ -39,7 +39,7 @@ export default function Blog() {
           w={{ base: "100%", md: "70%" }}
           py={6}
         />
-        I didn't bother much about the specs of the bare metal server since I
+        I didn&apos;t bother much about the specs of the bare metal server since I
         just wanted something to run a few containers here and there for my
         personal projects. So i entirely trusted my friend on it and gave him
         ~RM700 to buy and build it for me. Specs :
@@ -52,8 +52,8 @@ export default function Blog() {
         <span style={{ fontWeight: "semibold", color: "orange" }}>
           Polaris
         </span>{" "}
-        was because the case was "white" and we wanted to be cool and not name
-        it "Home Server" or some normie bs.
+        was because the case was &quot;white&quot; and we wanted to be cool and not name
+        it &quot;Home Server&quot; or some normie bs.
         <Image
           src="https://i.imgur.com/mf1H6mE.jpeg"
           alt="Polaris Setup"
@@ -77,10 +77,10 @@ export default function Blog() {
         to use a VPS to tunnel the connection back to my home server.
         <br />
         <br />
-        To conclude basically I am a lazy mofo that decided he wasn't that
+        To conclude basically I am a lazy mofo that decided he wasn&apos;t that
         interested in deploying his containers after all. Because I need to stay
-        at home to use the home server and that ain't my lifestyle chief. I
-        can't be confined by the four walls of my room. Therefore I am now stuck
+        at home to use the home server and that ain&apos;t my lifestyle chief. I
+        can&apos;t be confined by the four walls of my room. Therefore I am now stuck
         in limbo.
         <br />
         <br />
