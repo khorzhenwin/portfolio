@@ -11,10 +11,10 @@ import {
 const testimonials = [
   {
     key: 1,
-    name: "Khor Zhen Win",
+    name: "About Me",
     role: "Backend Engineer @ MoneyLion",
     content:
-      "Data Analytics major that decided to go rogue into software engineering. Around 2 years of experience in backend. Trying to be a good programmer, not just a passionate one. People relations are important no matter how godly of an individual contributor you are.",
+      "2+ years of experience in backend - fintech domain. Trying to be a good programmer, not just a passionate one. People relations are paramount despite your belief of doing your own work & minding your own business.",
     avatar: "https://i.imgur.com/FpE4HAZ.jpeg",
     redirectPath: "/blog",
   },
@@ -22,7 +22,7 @@ const testimonials = [
     key: 2,
     name: "Current Job",
     content:
-      "Backend Engineer in Moneylion for the Payments Team. Whole bunch of jargons like CQRS, Event Sourcing, Saga pattern,  Serverless Webhook Listeners, and many more. Think of it as a glorified aggregator of payment service providers. Tested till 100 TPS",
+      "Backend Engineer in Moneylion for the Payments Team. Whole bunch of jargons like CQRS, Event Sourcing, Saga pattern,  Serverless Webhook Listeners, and many more. Aggregator of payment service providers & recently integrated w/ Temporal. Tested till 100 TPS",
   },
 ];
 

@@ -54,8 +54,7 @@ export default function Hero() {
             </Text>
           </Heading>
           <Text color={"gray.300"} maxW={"3xl"} fontSize="xl" px={4}>
-            A passionate developer building modern web experiences.
-            Specializing in Next.js, React, and interactive UI design.
+            A backend developer building scalable systems w/ Java (domain in fintech) .  Have some other skills like Next.js, React, & Node.js.
           </Text>
         </Stack>
 
