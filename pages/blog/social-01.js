@@ -9,14 +9,14 @@ import ThreeBackground from "../../components/ThreeBackground";
 export default function Blog() {
   const content = (
     <>
-      <Box textAlign={"justify"}>
+      <Box>
         For my entire lifetime even when i was a kid, I have always walked the
         realms of life carrying extra weight. Being the obese kid with more
         curves than any other girl around me was not a fun experience. I was
         always treated differently, looked at differently, even by my own
         parents and siblings. So when Covid hit, I was like its now or never, to
-        prove to myself I don&apos;t need anyone else in my life to shape up cause I
-        aint gonna ship out.
+        prove to myself I don&apos;t need anyone else in my life to shape up
+        cause I aint gonna ship out.
         <Image
           src="https://i.imgur.com/PhU8YBU.jpeg"
           alt="High School"
@@ -30,13 +30,13 @@ export default function Blog() {
         <li>Weights 1 hour, walk 1 hour, jog 25 mins - 3 to 5 km</li>
         <br />
         Obviously the diet at that time was not sustainable for me @ 172cm with
-        1200kcal so it&apos;s harder to maintain calories now but all in all good
-        experience. Wouldn&apos;t recommend what I did but if you have the sheer
-        determination, I believe anything is possible. I became more confident,
-        more active, more sociable, with a higher self-esteem that propelled me
-        to excel in everything I do and overall I feel better with being healthy
-        as a part of my lifestyle. I don&apos;t get tired much and I can very much
-        function normally everyday with 6 hours of sleep.
+        1200kcal so it&apos;s harder to maintain calories now but all in all
+        good experience. Wouldn&apos;t recommend what I did but if you have the
+        sheer determination, I believe anything is possible. I became more
+        confident, more active, more sociable, with a higher self-esteem that
+        propelled me to excel in everything I do and overall I feel better with
+        being healthy as a part of my lifestyle. I don&apos;t get tired much and
+        I can very much function normally everyday with 6 hours of sleep.
         <br />
         <br />
         But ya be healthy guys and girls.

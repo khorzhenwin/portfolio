@@ -9,7 +9,7 @@ import ThreeBackground from "../../components/ThreeBackground";
 export default function Blog() {
   const content = (
     <>
-      <Box textAlign={"justify"}>
+      <Box>
         <Image
           src="https://i.imgur.com/YwWrqoz.png"
           alt="Go"
@@ -29,8 +29,8 @@ export default function Blog() {
         >
           Go by Example
         </Link>{" "}
-        then some youtube tutorials. I&apos;m pretty sure many of us goes through
-        this same process one way or another.
+        then some youtube tutorials. I&apos;m pretty sure many of us goes
+        through this same process one way or another.
         <br />
         <br />
         So then I just built some bs REST APIs with Chi router and Gorm just to
@@ -40,8 +40,8 @@ export default function Blog() {
         in-memory calculation that I will do some maths magic on it to send me a
         notification to Telegram. Then the whole application was supposed to be
         containerized and deployed on EC2. I tried setting up a local postgres
-        volume in my docker-compose but somehow vibe coding couldn&apos;t help me
-        solve me having to keep running migration on app startup.
+        volume in my docker-compose but somehow vibe coding couldn&apos;t help
+        me solve me having to keep running migration on app startup.
         <br />
         <br />I even setup my debit card so that AWS can charge my ass just for
         wanting to use free tier RDS (to store my ticker symbols). First version
@@ -77,11 +77,12 @@ export default function Blog() {
         <br />
         <br />
         But TLDR I got my <Link href="/blog/personal-01">home server</Link>{" "}
-        thinking I can deploy this application on it. But I&apos;m still currently
-        stuck at pushing my image tag to my home server registry. But fun times
-        learning Go, it&apos;s as expected as what everyone raves about, easy to
-        implement concurrency, abit of a nuisance pointer referencing. Very
-        pragmatic error handling paradigm but abit tedious at some times.
+        thinking I can deploy this application on it. But I&apos;m still
+        currently stuck at pushing my image tag to my home server registry. But
+        fun times learning Go, it&apos;s as expected as what everyone raves
+        about, easy to implement concurrency, abit of a nuisance pointer
+        referencing. Very pragmatic error handling paradigm but abit tedious at
+        some times.
       </Box>
     </>
   );
