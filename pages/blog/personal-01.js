@@ -9,12 +9,13 @@ import ThreeBackground from "../../components/ThreeBackground";
 export default function Blog() {
   const content = (
     <>
-      <Box textAlign={"justify"}>
+      <Box>
         Basically how this started was, I was having my own fun little project
         building something for my own learning (more on this in another post). I
-        didn&apos;t tell anyone about it either, I was just doing it for shits and
-        giggles. Then just on a random Monday, a friend from my university days
-        dropped me a message asking if I was interested in buying a home server.
+        didn&apos;t tell anyone about it either, I was just doing it for shits
+        and giggles. Then just on a random Monday, a friend from my university
+        days dropped me a message asking if I was interested in buying a home
+        server.
         <Image
           src="https://i.imgur.com/0qowfW2.png"
           alt="Leaked Chat"
@@ -39,8 +40,8 @@ export default function Blog() {
           w={{ base: "100%", md: "70%" }}
           py={6}
         />
-        I didn&apos;t bother much about the specs of the bare metal server since I
-        just wanted something to run a few containers here and there for my
+        I didn&apos;t bother much about the specs of the bare metal server since
+        I just wanted something to run a few containers here and there for my
         personal projects. So i entirely trusted my friend on it and gave him
         ~RM700 to buy and build it for me. Specs :
         <br />
@@ -52,8 +53,8 @@ export default function Blog() {
         <span style={{ fontWeight: "semibold", color: "orange" }}>
           Polaris
         </span>{" "}
-        was because the case was &quot;white&quot; and we wanted to be cool and not name
-        it &quot;Home Server&quot; or some normie bs.
+        was because the case was &quot;white&quot; and we wanted to be cool and
+        not name it &quot;Home Server&quot; or some normie bs.
         <Image
           src="https://i.imgur.com/mf1H6mE.jpeg"
           alt="Polaris Setup"
@@ -69,19 +70,20 @@ export default function Blog() {
         my own service registry. Crazy times we live in.
         <br />
         <br />
-        Big words started coming in like proxmox, OpenLens for monitoring, setting up
-        WireGuard if im not slapping a VPN on my port forward and many other big
-        jargons. But currently im stuck on the WireGuard part because I am lazy
-        to setup the cloud tunnelling because apparently my ISP is doing me
-        dirty with the CGNAT (I have no idea what i am talking about). So I have
-        to use a VPS to tunnel the connection back to my home server.
+        Big words started coming in like proxmox, OpenLens for monitoring,
+        setting up WireGuard if im not slapping a VPN on my port forward and
+        many other big jargons. But currently im stuck on the WireGuard part
+        because I am lazy to setup the cloud tunnelling because apparently my
+        ISP is doing me dirty with the CGNAT (I have no idea what i am talking
+        about). So I have to use a VPS to tunnel the connection back to my home
+        server.
         <br />
         <br />
         To conclude basically I am a lazy mofo that decided he wasn&apos;t that
         interested in deploying his containers after all. Because I need to stay
         at home to use the home server and that ain&apos;t my lifestyle chief. I
-        can&apos;t be confined by the four walls of my room. Therefore I am now stuck
-        in limbo.
+        can&apos;t be confined by the four walls of my room. Therefore I am now
+        stuck in limbo.
         <br />
         <br />
         Thanks for reading.

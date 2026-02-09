@@ -39,11 +39,18 @@ const sections = [
       {
         avatar: "https://i.imgur.com/ZWw76i0.png",
         headline: "Losing Weight",
-        subheadline:
-          "-36kg in 6 months",
+        subheadline: "-36kg in 6 months",
         badge: "July 2025",
         redirectPath: "/blog/social-01",
         badgeColour: "purple",
+      },
+      {
+        avatar: "https://i.imgur.com/gTCslTN.jpeg",
+        headline: "My First Job",
+        subheadline: "Experience since a fresh graduate",
+        badge: "February 2026",
+        redirectPath: "/blog/social-02",
+        badgeColour: "teal",
       },
     ],
   },
@@ -69,23 +76,32 @@ function Card(props) {
           border="1px solid transparent"
         >
           <Flex align="center">
-            <Avatar src={avatar} size="lg" border="2px solid" borderColor="orange.400" />
+            <Avatar
+              src={avatar}
+              size="lg"
+              border="2px solid"
+              borderColor="orange.400"
+            />
             <Box ml="4">
               <Text fontWeight="bold" fontSize="lg" color="white">
                 {headline}
                 {badge && (
-                  <Badge ml="2" colorScheme={badgeColour} variant="solid" rounded="full" px={2}>
+                  <Badge
+                    ml="2"
+                    colorScheme={badgeColour}
+                    variant="solid"
+                    rounded="full"
+                    px={2}
+                  >
                     {badge}
                   </Badge>
                 )}
               </Text>
-              <Text fontSize="sm" color="gray.300" mt={1}>{subheadline}</Text>
+              <Text fontSize="sm" color="gray.300" mt={1}>
+                {subheadline}
+              </Text>
             </Box>
-            <ChevronRightIcon
-              boxSize={8}
-              color={"orange.400"}
-              ml="auto"
-            />
+            <ChevronRightIcon boxSize={8} color={"orange.400"} ml="auto" />
           </Flex>
         </Box>
       </Link>
