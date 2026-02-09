@@ -26,8 +26,8 @@ export default function Blog() {
         I was blessed to grow alongside many great people, having a great
         mentor, best friend, and some one who will slap me with the reality when
         I really needed it. Even with this arduous journey of many ups and
-        downs, I didn't want to part ways on bad terms. So I hope I managed to
-        give a proper farewell to my team. Now, the appropriate way to start
+        downs, I didn&apos;t want to part ways on bad terms. So I hope I managed
+        to give a proper farewell to my team. Now, the appropriate way to start
         this story is the by going back to the end of a beginning from all the
         way back to 2023.
         <br />
@@ -44,7 +44,7 @@ export default function Blog() {
         mentor was always there to guide me through the complexities of the
         payment systems, and my teammates were always ready to lend a helping
         hand. The first few months were a whirlwind of learning, adapting, and
-        growing. But that didn't limit the closeness the team had with each
+        growing. But that didn&apos;t limit the closeness the team had with each
         other. From my first trip to Ipoh with the team, it was the start of
         many more memorable moments together.
         <br />
@@ -75,8 +75,8 @@ export default function Blog() {
         At this point, I remember feeling a sense of belonging, being part of a
         team that supported each other. With my position being more grounded, I
         felt more responsible to be able to speak on behalf of the team. Small
-        things like resolving other team's issues or queries became part of my
-        daily routine. I was no longer just a fresh grad, but a contributing
+        things like resolving other team&apos;s issues or queries became part of
+        my daily routine. I was no longer just a fresh grad, but a contributing
         member of the payments team.
         <Image
           src="https://i.imgur.com/Nq2WDX4.png"
@@ -95,10 +95,10 @@ export default function Blog() {
         />
         2024 ended with my first overnight shift at office which was a very
         interesting experience to say the least. Instantly fell sick the day
-        after but it was a memorable experience. And at this point i think i've
-        switched my seating place twice already? Since the addition of new
-        members, I was like okay doesn't really matter where I sit because I'm
-        not really at my seat anyways.
+        after but it was a memorable experience. And at this point i think
+        i&apos;ve switched my seating place twice already? Since the addition of
+        new members, I was like okay doesn&apos;t really matter where I sit
+        because I&apos;m not really at my seat anyways.
         <br />
         <br />
         <span style={{ fontWeight: "bold", color: "orange" }}>2025</span> <br />
@@ -164,12 +164,12 @@ export default function Blog() {
         reminder of how much things had changed. Many instances of under the
         table secrecies, singled out exclusions, to many excuses of not being
         able to explain their own decisions, but none could come and say they
-        just didn't want me there. I couldn't help but feel a sense of loss for
-        the camaraderie we once shared.
+        just didn&apos;t want me there. I couldn&apos;t help but feel a sense of
+        loss for the camaraderie we once shared.
         <br />
         <br />
         But as all things said, these people are just a passing moment in my
-        life. People come and go, and it's up to me to cherish the good
+        life. People come and go, and it&apos;s up to me to cherish the good
         memories. I bear no resentment towards anyone, for they have all played
         a part in my journey, shaping me into the person I am today. Lost
         investments in time and effort, but all in all its a learning
