@@ -17,7 +17,7 @@ export default function Blog() {
           mb={6}
         />
         Initially looking at the title of this book, I already expected it to be
-        very heavily opinionated. It's not like you can tell someone how to
+        very heavily opinionated. It&apos;s not like you can tell someone how to
         design a domain model when every business has different needs and
         requirements. So at face value, I already expected to just skim through
         most of this book.
@@ -25,12 +25,17 @@ export default function Blog() {
         <br />
         Chapters 1-4 are essentially very light on the topic itself. Just
         introducing the concepts of domains & subdomains in businesses, and how
-        they relate to bounded contexts in software design. Honestly, it's very
-        dry and if you have worked in a microservice-based engineering team
-        before, it shouldn't be hard at all to follow along. So far I would say
-        these few chapters can be skimmed through and the examples can also be
-        skipped as it just discusses around different flavours of decoupling.
+        they relate to bounded contexts in software design. Honestly, it&apos;s
+        very dry and if you have worked in a microservice-based engineering team
+        before, it shouldn&apos;t be hard at all to follow along. So far I would
+        say these few chapters can be skimmed through and the examples can also
+        be skipped as it just discusses around different flavours of decoupling.
         This is to each their own in an organization though.
+        <br />
+        <br />
+        Chapter 5 introduces concept of locking which I for one think if you
+        have read part of Designing Data Intensive Applications (DDIA) you would
+        have already been exposed to this concept.
       </Box>
     </>
   );
