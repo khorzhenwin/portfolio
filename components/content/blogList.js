@@ -12,7 +12,7 @@ import {
 
 const sections = [
   {
-    title: "Personal Projects",
+    title: "Learning",
     posts: [
       {
         avatar: "https://i.imgur.com/p1c9rvg.jpeg",
@@ -20,7 +20,7 @@ const sections = [
         subheadline:
           "Journey of setting up a home server because cloud is expensive",
         badge: "June 2025",
-        redirectPath: "/blog/personal-01",
+        redirectPath: "/blog/learning-01",
         badgeColour: "orange",
       },
       {
@@ -28,8 +28,16 @@ const sections = [
         headline: "Learning Golang",
         subheadline: "Vibe coding my way to a new language",
         badge: "July 2025",
-        redirectPath: "/blog/personal-02",
+        redirectPath: "/blog/learning-02",
         badgeColour: "purple",
+      },
+      {
+        avatar: "https://i.imgur.com/AN4s2tC.jpeg",
+        headline: "Learning Domain-Driven Design",
+        subheadline: "Reading this heavily opinionated book",
+        badge: "February 2026",
+        redirectPath: "/blog/learning-03",
+        badgeColour: "teal",
       },
     ],
   },
