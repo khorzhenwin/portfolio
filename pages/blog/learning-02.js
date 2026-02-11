@@ -17,7 +17,7 @@ export default function Blog() {
           mt={-16}
           mb={6}
         />
-        Somone slid into my dms asking me if I wanted a slave job that does 10
+        Someone slid into my dms asking me if I wanted a slave job that does 10
         too 12 hours a day but pays 1.6x my current salary. So without even
         securing an interview I just straight up bootcamped my way into learning
         Golang. First it was the basics of{" "}

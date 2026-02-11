@@ -33,9 +33,11 @@ export default function Blog() {
         This is to each their own in an organization though.
         <br />
         <br />
-        Chapter 5 introduces concept of locking which I for one think if you
+        Chapter 5 introduces concepts of locking which I for one think if you
         have read part of Designing Data Intensive Applications (DDIA) you would
-        have already been exposed to this concept.
+        have already been exposed to this concept. Chapter 6 talks about
+        aggregates and state management which is a key concept in CQRS if the
+        reader is not already familiar with it.
       </Box>
     </>
   );
@@ -43,7 +45,7 @@ export default function Blog() {
   return (
     <>
       <Head>
-        <title>Khor Zhen Win | Learning Golang</title>
+        <title>Khor Zhen Win | Learning Domain-Driven Design</title>
         <meta
           name="description"
           content="Learning Domain-Driven Design because I am a salary slave"
