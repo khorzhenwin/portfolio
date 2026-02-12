@@ -116,7 +116,7 @@ export default function Blog() {
           content="Khor Zhen Win | Learning Domain-Driven Design"
         />
         <meta property="og:description" content="Blogging? no im flogging" />
-        <meta property="og:image" content="https://i.imgur.com/YwWrqoz.png" />
+        <meta property="og:image" content="https://i.imgur.com/AN4s2tC.jpeg" />
         <link
           rel="shortcut icon"
           href="https://cdn-icons-png.flaticon.com/512/2666/2666436.png"
