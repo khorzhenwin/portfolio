@@ -44,14 +44,14 @@ export default function Blog() {
           alt="Feng Chia Night Market"
           py={4}
         />
-        On the second day we started off with Braised Pork Rice but there wasn't
-        many shops open as during our visit there was the swine flu outbreak. We
-        then headed to the Rainbow Village, which was a very colourful and
-        vibrant place. Stooped by for lunch at Tong An Curry which to my
-        surprise taiwan curry rice has Japanese influence yes but the taste is
-        totally different, focusing more on smokey aromas. After that later in
-        the day, we headed to the Gaomei Wetlands, which was a very beautiful
-        place to watch the sunset.
+        On the second day we started off with Braised Pork Rice but there
+        wasn&apos;t many shops open as during our visit there was the swine flu
+        outbreak. We then headed to the Rainbow Village, which was a very
+        colourful and vibrant place. Stooped by for lunch at Tong An Curry which
+        to my surprise taiwan curry rice has Japanese influence yes but the
+        taste is totally different, focusing more on smokey aromas. After that
+        later in the day, we headed to the Gaomei Wetlands, which was a very
+        beautiful place to watch the sunset.
         <Image
           src="https://i.imgur.com/8qFlhmQ.png"
           alt="Braised Pork Rice"
@@ -98,9 +98,9 @@ export default function Blog() {
         <Image src="https://i.imgur.com/w6DZ8eu.png" alt="Drinks 2" py={4} />
         On the fifth day we went to Jiufen & Shifen to light up the lantern as
         well as explore the old town to get souvenirs. Towards the end of the
-        trip it's usually just shopping and buying stuff so for the sixth day we
-        just went to Ximending and Taipei 101 to do some shopping and eat some
-        food before heading back to the airport.
+        trip it&apos;s usually just shopping and buying stuff so for the sixth
+        day we just went to Ximending and Taipei 101 to do some shopping and eat
+        some food before heading back to the airport.
         <Image src="https://i.imgur.com/OoIX3rq.png" alt="Jiufen" py={4} />
         <Image src="https://i.imgur.com/0brAbLV.png" alt="Taipei 101" py={4} />
       </Box>
