@@ -15,6 +15,46 @@ a {
   box-sizing: border-box;
 }
 
+.three-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.three-bg-gradient {
+  position: absolute;
+  inset: -20%;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(31, 42, 68, 0.8) 0%, rgba(31, 42, 68, 0) 45%),
+    radial-gradient(circle at 80% 30%, rgba(43, 31, 71, 0.75) 0%, rgba(43, 31, 71, 0) 50%),
+    radial-gradient(circle at 50% 80%, rgba(16, 40, 58, 0.6) 0%, rgba(16, 40, 58, 0) 55%),
+    linear-gradient(160deg, #05070f 0%, #0b1020 55%, #05060b 100%);
+  background-size: 140% 140%;
+  filter: blur(22px);
+  transform-origin: center;
+  animation: darkGradientFlow 18s ease-in-out infinite alternate;
+}
+
+@keyframes darkGradientFlow {
+  0% {
+    background-position: 0% 20%;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    background-position: 100% 80%;
+    transform: scale(1.06) rotate(1.2deg);
+  }
+  100% {
+    background-position: 20% 10%;
+    transform: scale(1.03) rotate(-1deg);
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
