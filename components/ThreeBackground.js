@@ -29,8 +29,14 @@ function TechNetwork(props) {
 
 export default function ThreeBackground() {
   return (
-    <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1, background: '#0a0a0a' }}>
-      <Canvas camera={{ position: [0, 0, 1] }}>
+    <div className="three-bg">
+      <div className="three-bg-gradient" />
+      <Canvas
+        style={{ position: 'relative', zIndex: 1 }}
+        camera={{ position: [0, 0, 1] }}
+        gl={{ alpha: true }}
+        onCreated={({ gl }) => gl.setClearColor('#000000', 0)}
+      >
         <TechNetwork />
       </Canvas>
     </div>

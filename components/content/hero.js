@@ -7,12 +7,8 @@ import {
   Icon,
 } from "@chakra-ui/react";
 import { FaDownload } from "react-icons/fa";
-import { useRef, useEffect, useState } from "react";
 
 export default function Hero() {
-  const [documentId, setDocumentId] = useState(null);
-  const scrollRef = useRef(null);
-
   const handleDonwload = () => {
     const link = document.createElement("a");
     link.href = "/CV.pdf";
@@ -21,16 +17,6 @@ export default function Hero() {
     link.click();
     document.body.removeChild(link);
   };
-
-  useEffect(() => {
-    if (documentId) {
-      scrollRef.current = document.getElementById(documentId);
-      if (scrollRef.current) {
-        scrollRef.current.scrollIntoView({ behavior: "smooth" });
-      }
-      setDocumentId(null);
-    }
-  }, [documentId]);
 
   return (
     <Container maxW={"5xl"}>
@@ -66,7 +52,13 @@ export default function Hero() {
             colorScheme={"orange"}
             bg={"orange.400"}
             _hover={{ bg: "orange.500" }}
-            onClick={() => setDocumentId("achievements")}
+            onClick={() =>
+              window.open(
+                "https://github.com/khorzhenwin?tab=repositories",
+                "_blank",
+                "noopener,noreferrer"
+              )
+            }
           >
             View Projects
           </Button>
