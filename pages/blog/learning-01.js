@@ -109,13 +109,21 @@ export default function Blog() {
         />
       </Head>
       <ThreeBackground />
-      <Box position="relative" zIndex={1}>
+      <Box
+        position="relative"
+        zIndex={1}
+        minH="100vh"
+        display="flex"
+        flexDirection="column"
+      >
         <Header />
+        <Box flex="1">
         <ArticleLayout
           title={"Buying A Home Server Because I Have Adult Money"}
           date={"June 2025"}
           content={content}
         />
+        </Box>
         <Footer />
         <ScrollToTop />
       </Box>

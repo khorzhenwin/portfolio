@@ -15,6 +15,27 @@ a {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent sticky header from covering anchor targets */
+#projects,
+#about,
+#contact {
+  scroll-margin-top: 84px;
+}
+
+body.custom-cursor-enabled,
+body.custom-cursor-enabled a,
+body.custom-cursor-enabled button,
+body.custom-cursor-enabled input,
+body.custom-cursor-enabled textarea,
+body.custom-cursor-enabled select,
+body.custom-cursor-enabled [role="button"] {
+  cursor: none !important;
+}
+
 .three-bg {
   position: fixed;
   top: 0;
@@ -55,6 +76,20 @@ a {
   }
 }
 
+.marquee-left {
+  width: max-content;
+  animation: marqueeLeft 26s linear infinite;
+}
+
+@keyframes marqueeLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -62,5 +97,11 @@ a {
   body {
     color: white;
     background: black;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }

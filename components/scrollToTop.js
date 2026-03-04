@@ -32,9 +32,9 @@ export default function ScrollToTop() {
         <IconButton
           size={"sm"}
           icon={<HiArrowUp />}
-          colorScheme={"orange"}
-          bg={"orange.400"}
-          variant="solid"
+          color="whiteAlpha.900"
+          variant="ghost"
+          _hover={{ bg: "transparent", color: "white" }}
           onClick={scrollToTop}
           position="fixed"
           bottom="20px"

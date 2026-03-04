@@ -13,8 +13,6 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 const SocialButton = ({ children, label, href }) => {
   return (
     <chakra.button
-      bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
-      rounded={"full"}
       w={8}
       h={8}
       cursor={"pointer"}
@@ -23,9 +21,10 @@ const SocialButton = ({ children, label, href }) => {
       display={"inline-flex"}
       alignItems={"center"}
       justifyContent={"center"}
-      transition={"background 0.3s ease"}
+      transition={"color 0.3s ease"}
+      color={useColorModeValue("gray.600", "gray.300")}
       _hover={{
-        bg: useColorModeValue("blackAlpha.200", "whiteAlpha.200"),
+        color: useColorModeValue("black", "white"),
       }}
     >
       <VisuallyHidden>{label}</VisuallyHidden>
