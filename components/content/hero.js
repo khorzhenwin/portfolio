@@ -46,7 +46,6 @@ export default function Hero() {
 
         <Stack spacing={4} direction={{ base: "column", md: "row" }}>
           <Button
-            rounded={"full"}
             px={8}
             size="lg"
             colorScheme={"orange"}
@@ -63,7 +62,6 @@ export default function Hero() {
             View Projects
           </Button>
           <Button
-            rounded={"full"}
             px={8}
             size="lg"
             variant="outline"
