@@ -148,7 +148,7 @@ export default function Home() {
                 fontSize={{ base: "3xl", sm: "4xl", md: "6xl" }}
                 lineHeight="105%"
               >
-                I've done{" "}
+                I&apos;ve done{" "}
                 <TypeWriter
                   words={[
                     "Backend Systems",
