@@ -51,7 +51,9 @@ export default function CustomCursor() {
       const t = e.target;
       if (!t || !t.closest) return;
       setIsHovering(
-        !!t.closest("a, button, [role='button'], input, textarea, select, label")
+        !!t.closest(
+          "a, button, [role='button'], input, textarea, select, label",
+        ),
       );
     };
 
@@ -99,12 +101,12 @@ export default function CustomCursor() {
           pointerEvents: "none",
           zIndex: 9999,
           borderRadius: "9999px",
-          backgroundColor: "#6366f1",
+          backgroundColor: "#f97316",
         }}
         animate={{
           width: isClicking ? 5 : 8,
           height: isClicking ? 5 : 8,
-          backgroundColor: isHovering ? "#a78bfa" : "#6366f1",
+          backgroundColor: isHovering ? "#fb923c" : "#f97316",
         }}
         transition={{ duration: 0.12 }}
       />
@@ -129,9 +131,11 @@ export default function CustomCursor() {
           marginLeft: isHovering ? -10 : isClicking ? 5 : 0,
           marginTop: isHovering ? -10 : isClicking ? 5 : 0,
           borderColor: isHovering
-            ? "rgba(167, 139, 250, 0.7)"
-            : "rgba(99, 102, 241, 0.4)",
-          backgroundColor: isHovering ? "rgba(139, 92, 246, 0.08)" : "transparent",
+            ? "rgba(251, 146, 60, 0.75)"
+            : "rgba(249, 115, 22, 0.45)",
+          backgroundColor: isHovering
+            ? "rgba(251, 146, 60, 0.1)"
+            : "transparent",
         }}
         transition={{ type: "spring", stiffness: 250, damping: 22 }}
       />
