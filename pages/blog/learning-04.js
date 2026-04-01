@@ -2,7 +2,7 @@ import Footer from "../../components/layout/footer";
 import Header from "../../components/layout/header";
 import ScrollToTop from "../../components/scrollToTop";
 import Head from "next/head";
-import { Box, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Heading, Image, Link, Text } from "@chakra-ui/react";
 import ArticleLayout from "../../components/blog/article";
 import ThreeBackground from "../../components/ThreeBackground";
 
@@ -15,6 +15,17 @@ export default function Blog() {
     <>
       <Box>
         <Image src={imageUrl} alt="Learning Concurrency in Go" mb={6} />
+        <Text mb={4}>
+          Read here:{" "}
+          <Link
+            href="https://edu.anarcho-copy.org/Programming%20Languages/Go/Concurrency%20in%20Go.pdf"
+            isExternal
+            color="orange.300"
+            fontWeight="bold"
+          >
+            Concurrency in Go
+          </Link>
+        </Text>
         <Heading as="h2" size="lg" mb={4}>
           Book Rating : 8/10
         </Heading>
