@@ -39,6 +39,15 @@ const sections = [
         redirectPath: "/blog/learning-03",
         badgeColour: "teal",
       },
+      {
+        avatar: "https://i.imgur.com/yyCNJbS.png",
+        headline: "Learning Concurrency in Go",
+        subheadline:
+          "Interim thoughts on Go concurrency from a Java background",
+        badge: "March 2026",
+        redirectPath: "/blog/learning-04",
+        badgeColour: "yellow",
+      },
     ],
   },
   {
