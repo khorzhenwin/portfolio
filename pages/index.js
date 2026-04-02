@@ -362,46 +362,6 @@ export default function Home() {
             </Grid>
           </Container>
 
-          <Box bg="blackAlpha.400" py={{ base: 16, md: 20 }}>
-            <Container maxW="5xl">
-              <Text
-                textAlign="center"
-                color="orange.400"
-                textTransform="uppercase"
-                letterSpacing="widest"
-                fontSize="sm"
-              >
-                By The Numbers
-              </Text>
-              <Heading textAlign="center" mt={2} mb={8}>
-                Delivering Results
-              </Heading>
-              <Box
-                border="1px solid"
-                borderColor="whiteAlpha.300"
-                bg="rgba(12, 20, 43, 0.65)"
-                borderRadius="xl"
-                p={8}
-                textAlign="center"
-                maxW="sm"
-                mx="auto"
-              >
-                <Text fontSize={{ base: "4xl", md: "5xl" }} fontWeight="black">
-                  2.5+
-                </Text>
-                <Text
-                  mt={2}
-                  color="gray.300"
-                  fontSize="sm"
-                  textTransform="uppercase"
-                  letterSpacing="wider"
-                >
-                  Years Experience
-                </Text>
-              </Box>
-            </Container>
-          </Box>
-
           <Container maxW="6xl" py={{ base: 16, md: 24 }}>
             <Text
               textAlign="center"
