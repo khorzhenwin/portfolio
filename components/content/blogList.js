@@ -2,13 +2,14 @@ import { ChevronRightIcon } from "@chakra-ui/icons";
 import {
   Avatar,
   Box,
-  chakra,
   Flex,
   Badge,
+  Heading,
   Text,
   Link,
   VStack,
 } from "@chakra-ui/react";
+import { useRef } from "react";
 
 const sections = [
   {
@@ -81,76 +82,63 @@ const sections = [
   },
 ];
 
-function Card(props) {
+function StoryCard(props) {
   const { avatar, headline, subheadline, badge, redirectPath, badgeColour } =
     props;
+  const cardRef = useRef(null);
+
+  const updatePointer = (event) => {
+    const card = cardRef.current;
+    if (!card) return;
+    const bounds = card.getBoundingClientRect();
+    const x = ((event.clientX - bounds.left) / bounds.width) * 100;
+    const y = ((event.clientY - bounds.top) / bounds.height) * 100;
+    card.style.setProperty("--story-x", `${x}%`);
+    card.style.setProperty("--story-y", `${y}%`);
+  };
+
   return (
-    <>
-      <Link href={redirectPath} _hover={{ textDecoration: "none" }}>
-        <Box
-          py={4}
-          px={4}
-          rounded="xl"
-          transition="all 0.3s ease"
-          _hover={{
-            bg: "rgba(255, 255, 255, 0.1)",
-            transform: "translateY(-2px)",
-            boxShadow: "lg",
-            borderColor: "rgba(255, 255, 255, 0.1)",
-          }}
-          border="1px solid transparent"
-        >
-          <Flex align="center">
-            <Avatar
-              src={avatar}
-              size="lg"
-              border="2px solid"
-              borderColor="orange.400"
-            />
-            <Box ml="4">
-              <Text fontWeight="bold" fontSize="lg" color="white">
-                {headline}
-                {badge && (
-                  <Badge
-                    ml="2"
-                    colorScheme={badgeColour}
-                    variant="solid"
-                    rounded="full"
-                    px={2}
-                  >
-                    {badge}
-                  </Badge>
-                )}
-              </Text>
-              <Text fontSize="sm" color="gray.300" mt={1}>
-                {subheadline}
-              </Text>
-            </Box>
-            <ChevronRightIcon boxSize={8} color={"orange.400"} ml="auto" />
+    <Link
+      href={redirectPath}
+      className="story-card"
+      ref={cardRef}
+      onPointerMove={updatePointer}
+      _hover={{ textDecoration: "none" }}
+    >
+      <Box className="story-card-glow" />
+      <Flex align="center" gap={4} position="relative" zIndex={1}>
+        <Avatar src={avatar} size="lg" className="story-card-avatar" />
+        <Box flex="1" minW={0}>
+          <Flex align="center" gap={2} wrap="wrap">
+            <Heading as="h3" size="sm" color="white">
+              {headline}
+            </Heading>
+            {badge && (
+              <Badge className="story-card-date" colorScheme={badgeColour}>
+                {badge}
+              </Badge>
+            )}
           </Flex>
+          <Text fontSize="sm" color="gray.300" mt={2} noOfLines={2}>
+            {subheadline}
+          </Text>
         </Box>
-      </Link>
-    </>
+        <ChevronRightIcon className="story-card-arrow" boxSize={6} />
+      </Flex>
+      <Text className="story-card-route">OPEN STORY / {redirectPath.replace("/blog/", "")}</Text>
+    </Link>
   );
 }
 
 function Section(props) {
   const { title, posts } = props;
   return (
-    <Box py={4} pb={6}>
-      <chakra.h3
-        fontWeight={"bold"}
-        fontSize={15}
-        textTransform={"uppercase"}
-        color={"gray.400"}
-        pb={2}
-      >
-        {title}
-      </chakra.h3>
-      {posts.length != 0 &&
-        posts.map((post, index, key) => (
-          <Card {...post} index={index} key={index} />
-        ))}
+    <Box className="story-group">
+      <Flex className="story-group-heading" align="center" justify="space-between">
+        <Text>{title}</Text>
+        <Text>{String(posts.length).padStart(2, "0")} ENTRIES</Text>
+      </Flex>
+      {posts.length !== 0 && posts.map((post) => <StoryCard {...post} key={post.redirectPath} />)}
     </Box>
   );
 }
@@ -158,24 +146,21 @@ function Section(props) {
 export default function BlogList() {
   return (
     <>
-      <Box my={{ base: 20, md: 30, lg: 30, xl: 35 }} mx={{ base: 7, md: 0 }}>
-        <Flex direction={"column"} width={"full"}>
-          <Box width={{ base: "full", sm: "lg", lg: "xl" }} margin={"auto"}>
-            <chakra.h2
-              textAlign={{ base: "center", md: "left" }}
-              fontWeight={"bold"}
-              fontSize={22}
-              textTransform={"uppercase"}
-              color={"orange.400"}
-              pb={6}
-            >
-              Stories About Myself
-            </chakra.h2>
-            {sections.map((section, index, key) => (
-              <Section {...section} index={index} key={index} />
-            ))}
-          </Box>
+      <Box className="stories-shell">
+        <Flex className="stories-hero" direction={{ base: "column", md: "row" }} justify="space-between" align={{ base: "start", md: "end" }} gap={6}>
+          <VStack align="start" spacing={3}>
+            <Text className="stories-kicker">Personal archive / 07</Text>
+            <Heading color="white" fontSize={{ base: "4xl", md: "6xl" }} lineHeight="0.95">
+              Field notes
+            </Heading>
+          </VStack>
+          <Text className="stories-intro">
+            Technical detours, unfinished thoughts, and the human systems behind the work.
+          </Text>
         </Flex>
+        <Box className="stories-index">
+          {sections.map((section) => <Section {...section} key={section.title} />)}
+        </Box>
       </Box>
     </>
   );

@@ -40,10 +40,10 @@ fn liquid(uv: vec2f) -> vec3f {
   let glass = vec3f(0.35, 0.95, 1.0);
   let warm = vec3f(1.0, 0.22, 0.025);
   var color = mix(deep, electric, smoothstep(0.12, 0.7, field));
-  color = mix(color, glass, smoothstep(0.58, 0.9, ribbon) * 0.72);
-  color += warm * smoothstep(0.82, 0.98, ribbon) * 0.55;
-  color += vec3f(0.15, 0.55, 0.95) * bands * 0.8;
-  color += vec3f(0.55, 0.9, 1.0) * caustic * 0.65;
+  color = mix(color, glass, smoothstep(0.58, 0.9, ribbon) * 0.58);
+  color += warm * smoothstep(0.82, 0.98, ribbon) * 0.38;
+  color += vec3f(0.15, 0.55, 0.95) * bands * 0.54;
+  color += vec3f(0.55, 0.9, 1.0) * caustic * 0.4;
   return color * params.intensity;
 }
 
@@ -53,5 +53,5 @@ fn fs_main(@location(0) uv: vec2f) -> @location(0) vec4f {
   let vignette = smoothstep(1.08, 0.28, distance(uv, vec2f(0.5)));
   let highlight = pow(max(0.0, 1.0 - distance(uv, vec2f(0.28, 0.16)) * 2.2), 4.0);
   let edgeLight = smoothstep(0.2, 0.0, abs(uv.y - (0.2 + uv.x * 0.22)));
-  return vec4f((color + vec3f(highlight * 0.45, highlight * 0.65, highlight) + vec3f(edgeLight * 0.18)) * vignette, 1.0);
+  return vec4f((color + vec3f(highlight * 0.2, highlight * 0.3, highlight * 0.36) + vec3f(edgeLight * 0.1)) * vignette, 1.0);
 }
