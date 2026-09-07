@@ -3,6 +3,7 @@ import { extendTheme, ColorModeScript, ChakraProvider } from "@chakra-ui/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import CustomCursor from "../components/CustomCursor";
+import ThreeBackground from "../components/ThreeBackground";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -29,6 +30,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <ChakraProvider theme={theme}>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+        <ThreeBackground />
         <CustomCursor />
         <AnimatePresence mode="wait" initial={false}>
           <motion.div

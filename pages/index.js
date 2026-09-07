@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Head from "next/head";
 import { motion } from "framer-motion";
 import {
@@ -20,7 +20,6 @@ import { FaArrowRight, FaExternalLinkAlt } from "react-icons/fa";
 import Header from "../components/layout/header";
 import Footer from "../components/layout/footer";
 import ScrollToTop from "../components/scrollToTop";
-import ThreeBackground from "../components/ThreeBackground";
 import {
   aboutCards,
   experiences,
@@ -29,6 +28,96 @@ import {
 } from "../lib/portfolioData";
 
 const MotionBox = motion(Box);
+
+function ProjectLens({ project, index }) {
+  const cardRef = useRef(null);
+
+  const updatePointer = (event) => {
+    const card = cardRef.current;
+    if (!card) return;
+
+    const bounds = card.getBoundingClientRect();
+    const x = ((event.clientX - bounds.left) / bounds.width) * 100;
+    const y = ((event.clientY - bounds.top) / bounds.height) * 100;
+    const tiltX = ((50 - y) / 50) * 4;
+    const tiltY = ((x - 50) / 50) * 5;
+
+    card.style.setProperty("--pointer-x", `${x}%`);
+    card.style.setProperty("--pointer-y", `${y}%`);
+    card.style.setProperty("--tilt-x", `${tiltX}deg`);
+    card.style.setProperty("--tilt-y", `${tiltY}deg`);
+  };
+
+  const resetPointer = () => {
+    const card = cardRef.current;
+    if (!card) return;
+    card.style.setProperty("--pointer-x", "50%");
+    card.style.setProperty("--pointer-y", "20%");
+    card.style.setProperty("--tilt-x", "0deg");
+    card.style.setProperty("--tilt-y", "0deg");
+  };
+
+  return (
+    <GridItem>
+      <Box
+        ref={cardRef}
+        className="project-lens"
+        onPointerMove={updatePointer}
+        onPointerLeave={resetPointer}
+        style={{ "--card-delay": `${index * 90}ms` }}
+      >
+        <Box className="project-lens-sheen" />
+        <Box className="project-lens-media">
+          {project.coverImage ? (
+            <Image
+              src={project.coverImage}
+              alt={`${project.title} README cover`}
+              w="100%"
+              h="100%"
+              objectFit="cover"
+            />
+          ) : (
+            <Box className="project-lens-placeholder" bgGradient={project.gradient}>
+              <Text>DATA / FIELD STUDY</Text>
+            </Box>
+          )}
+          <Box className="project-lens-media-wash" />
+          <Text className="project-lens-index">0{index + 1} / 03</Text>
+        </Box>
+        <VStack className="project-lens-content" align="start" spacing={4}>
+          <HStack justify="space-between" w="100%" align="start">
+            <Badge className="project-lens-category">{project.category}</Badge>
+            <Text className="project-lens-signal">LIVE SIGNAL</Text>
+          </HStack>
+          <Heading size="md" color="white">
+            {project.title}
+          </Heading>
+          <Text color="gray.300" fontSize="sm" lineHeight="tall">
+            {project.description}
+          </Text>
+          <HStack spacing={2} wrap="wrap">
+            {project.tech.map((item) => (
+              <Badge key={item} className="project-lens-tech">
+                {item}
+              </Badge>
+            ))}
+          </HStack>
+          <Button
+            as="a"
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-lens-link"
+            variant="link"
+            rightIcon={<FaExternalLinkAlt />}
+          >
+            Open Repository
+          </Button>
+        </VStack>
+      </Box>
+    </GridItem>
+  );
+}
 
 function TypeWriter({ words, speed = 85, pause = 1700 }) {
   const [text, setText] = useState("");
@@ -115,7 +204,6 @@ export default function Home() {
           href="https://cdn-icons-png.flaticon.com/512/2666/2666436.png"
         />
       </Head>
-      <ThreeBackground />
       <Box
         position="relative"
         zIndex={1}
@@ -222,108 +310,36 @@ export default function Home() {
             </HStack>
           </Box>
 
-          <Container maxW="6xl" py={{ base: 14, md: 20 }} id="projects">
-            <VStack spacing={3} mb={10}>
-              <Text
-                fontWeight="bold"
-                fontSize={20}
-                textTransform="uppercase"
-                color="orange.400"
+          <Box className="project-glasshouse" id="projects">
+            <Container maxW="6xl" py={{ base: 16, md: 24 }}>
+              <Flex
+                justify="space-between"
+                align={{ base: "start", md: "end" }}
+                direction={{ base: "column", md: "row" }}
+                gap={5}
+                mb={10}
               >
-                Featured Work
-              </Text>
-              <Heading textAlign="center" color="gray.100">
-                GitHub Projects
-              </Heading>
-            </VStack>
-            <Grid
-              templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
-              gap={6}
-            >
-              {featuredProjects.map((project, idx) => (
-                <GridItem key={project.title}>
-                  <MotionBox
-                    whileHover={{
-                      rotateX: -4,
-                      rotateY: idx % 2 === 0 ? 5 : -5,
-                      y: -8,
-                    }}
-                    transition={{ type: "spring", stiffness: 180, damping: 14 }}
-                    transformStyle="preserve-3d"
-                    border="1px solid"
-                    borderColor="whiteAlpha.300"
-                    bg="rgba(10, 16, 35, 0.6)"
-                    borderRadius="2xl"
-                    overflow="hidden"
-                    h="full"
-                  >
-                    {project.coverImage ? (
-                      <Box h="180px" overflow="hidden" position="relative">
-                        <Image
-                          src={project.coverImage}
-                          alt={`${project.title} README cover`}
-                          w="100%"
-                          h="100%"
-                          objectFit="cover"
-                        />
-                        <Box
-                          position="absolute"
-                          inset={0}
-                          bgGradient="linear(to-t, rgba(5,9,20,0.9), rgba(5,9,20,0.2))"
-                        />
-                      </Box>
-                    ) : (
-                      <Box
-                        h="180px"
-                        bgGradient={project.gradient}
-                        opacity={0.78}
-                        display="flex"
-                        alignItems="center"
-                        justifyContent="center"
-                      >
-                        <Text
-                          fontSize="sm"
-                          color="whiteAlpha.900"
-                          fontWeight="bold"
-                        >
-                          No README image available
-                        </Text>
-                      </Box>
-                    )}
-                    <VStack align="start" spacing={4} p={6}>
-                      <Badge colorScheme="orange">{project.category}</Badge>
-                      <Heading size="md">{project.title}</Heading>
-                      <Text color="gray.300" fontSize="sm">
-                        {project.description}
-                      </Text>
-                      <HStack spacing={2} wrap="wrap">
-                        {project.tech.map((item) => (
-                          <Badge
-                            key={item}
-                            borderRadius="md"
-                            colorScheme="whiteAlpha"
-                          >
-                            {item}
-                          </Badge>
-                        ))}
-                      </HStack>
-                      <Button
-                        as="a"
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        variant="link"
-                        rightIcon={<FaExternalLinkAlt />}
-                        color="orange.300"
-                      >
-                        View Project
-                      </Button>
-                    </VStack>
-                  </MotionBox>
-                </GridItem>
-              ))}
-            </Grid>
-          </Container>
+                <VStack align="start" spacing={3}>
+                  <Text className="project-section-kicker">Featured Work / 03</Text>
+                  <Heading color="gray.100" fontSize={{ base: "3xl", md: "5xl" }}>
+                    Systems under glass.
+                  </Heading>
+                </VStack>
+                <Text className="project-section-note">
+                  Selected repositories, exposed as living surfaces.
+                </Text>
+              </Flex>
+              <Grid
+                templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
+                gap={{ base: 5, md: 6 }}
+                alignItems="stretch"
+              >
+                {featuredProjects.map((project, index) => (
+                  <ProjectLens key={project.title} project={project} index={index} />
+                ))}
+              </Grid>
+            </Container>
+          </Box>
 
           <Container maxW="6xl" py={{ base: 14, md: 20 }} id="about">
             <VStack spacing={4} textAlign="center" mb={8}>
