@@ -20,7 +20,6 @@ import { FaArrowRight, FaExternalLinkAlt } from "react-icons/fa";
 import Header from "../components/layout/header";
 import Footer from "../components/layout/footer";
 import ScrollToTop from "../components/scrollToTop";
-import ThreeBackground from "../components/ThreeBackground";
 import {
   aboutCards,
   experiences,
@@ -115,7 +114,6 @@ export default function Home() {
           href="https://cdn-icons-png.flaticon.com/512/2666/2666436.png"
         />
       </Head>
-      <ThreeBackground />
       <Box
         position="relative"
         zIndex={1}

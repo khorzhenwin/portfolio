@@ -44,6 +44,12 @@ body.custom-cursor-enabled [role="button"] {
   height: 100%;
   z-index: -1;
   overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 18% 24%, rgba(0, 188, 255, 0.28) 0%, rgba(0, 188, 255, 0) 34%),
+    radial-gradient(ellipse at 84% 18%, rgba(255, 92, 24, 0.2) 0%, rgba(255, 92, 24, 0) 30%),
+    radial-gradient(ellipse at 64% 86%, rgba(31, 93, 255, 0.24) 0%, rgba(31, 93, 255, 0) 38%),
+    #05070f;
 }
 
 .three-bg-gradient {
@@ -51,14 +57,34 @@ body.custom-cursor-enabled [role="button"] {
   inset: -20%;
   z-index: 0;
   background:
-    radial-gradient(circle at 20% 20%, rgba(31, 42, 68, 0.8) 0%, rgba(31, 42, 68, 0) 45%),
-    radial-gradient(circle at 80% 30%, rgba(43, 31, 71, 0.75) 0%, rgba(43, 31, 71, 0) 50%),
-    radial-gradient(circle at 50% 80%, rgba(16, 40, 58, 0.6) 0%, rgba(16, 40, 58, 0) 55%),
-    linear-gradient(160deg, #05070f 0%, #0b1020 55%, #05060b 100%);
-  background-size: 140% 140%;
-  filter: blur(22px);
+    radial-gradient(ellipse at 12% 38%, rgba(0, 204, 255, 0.65) 0%, rgba(0, 120, 255, 0) 38%),
+    radial-gradient(ellipse at 78% 22%, rgba(255, 76, 20, 0.4) 0%, rgba(255, 76, 20, 0) 30%),
+    radial-gradient(ellipse at 52% 88%, rgba(34, 72, 255, 0.5) 0%, rgba(34, 72, 255, 0) 48%),
+    linear-gradient(135deg, #060918 0%, #101b42 48%, #10091f 100%);
+  background-size: 155% 155%;
+  filter: blur(34px) saturate(1.35);
   transform-origin: center;
   animation: darkGradientFlow 18s ease-in-out infinite alternate;
+}
+
+.liquid-glass-canvas {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  mix-blend-mode: screen;
+  filter: saturate(1.45) contrast(1.2);
+  transition: opacity 700ms ease;
+}
+
+.liquid-glass-canvas:not([data-failed]) {
+  opacity: 1;
+}
+
+.three-bg-fallback .liquid-glass-canvas {
+  display: none;
 }
 
 @keyframes darkGradientFlow {
@@ -103,5 +129,13 @@ body.custom-cursor-enabled [role="button"] {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .three-bg-gradient {
+    animation: none;
+  }
+
+  .liquid-glass-canvas {
+    transition: none;
   }
 }
